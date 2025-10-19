@@ -1,0 +1,82 @@
+# Site Settings
+title: "Tilak Parajuli"
+email: tilak.parajuli.58@gmail.com
+description: >-
+  AI and machine learning researcher with expertise in data analysis, information retrieval,
+  and applied research. Focused on generative AI and agentic systems.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourusername.github.io" # your site URL
+
+# Author Information
+author:
+  name: "Tilak Parajuli"
+  bio: "AI/ML Researcher | BSc Computer Science | AI Fellow at Fusemachines"
+  location: "Kathmandu, Nepal"
+  email: tilak.parajuli.58@gmail.com
+  linkedin: tilak-parajuli
+  github: parajulitilak
+  orcid: ""
+  google_scholar: ""
+  twitter: ""
+
+# Build Settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research
+  - title: Projects
+    url: /projects
+  - title: Experience
+    url: /experience
+  - title: CV
+    url: /cv
+  - title: Contact
+    url: /contact
+  - title: Chat
+    url: /chat
+
+# Google Analytics (optional - add your tracking ID)
+google_analytics: # UA-XXXXXXXXX-X
+
+# Chat API Configuration
+chat_api_url: "https://your-backend.vercel.app"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+

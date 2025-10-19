@@ -1,0 +1,9 @@
+<div class="container">
+    <small>
+        &copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. All rights reserved. —
+        <a href="mailto:{{ site.author.email }}">Email</a>
+        {% if site.author.linkedin %} · <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+        {% if site.author.github %} · <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        · Built with Jekyll · GitHub Pages
+    </small>
+</div>

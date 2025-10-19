@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<article class="page">
+    <header class="page-header">
+        <h1 class="page-title">{{ page.title }}</h1>
+    </header>
+    {% if page.toc == false %}
+    <div class="page-content">
+        {{ content }}
+    </div>
+    {% else %}
+    <div class="content-grid">
+        <aside class="toc-sidebar" aria-label="On this page">
+            <div class="toc-heading">On this page</div>
+            <nav id="toc" class="toc"></nav>
+        </aside>
+        <div class="page-content" data-toc-source>
+            {{ content }}
+        </div>
+    </div>
+    {% endif %}
+</article>
