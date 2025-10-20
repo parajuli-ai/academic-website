@@ -7,7 +7,8 @@
     'use strict';
     
     // Get API URL from Jekyll config or use default
-    const API_URL = typeof chatApiUrl !== 'undefined' ? chatApiUrl : 'http://localhost:8001';
+    // const API_URL = typeof chatApiUrl !== 'undefined' ? chatApiUrl : 'http://localhost:8001';
+    const API_URL = typeof chatApiUrl !== 'undefined' ? chatApiUrl : 'https://academic-website-backend.onrender.com';
     
     const chatMessages = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
