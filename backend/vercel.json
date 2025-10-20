@@ -15,10 +15,19 @@
   "env": {
     "GOOGLE_API_KEY": "@google_api_key",
     "PINECONE_API_KEY": "@pinecone_api_key",
-    "PINECONE_INDEX_NAME": "tilak-academic-site",
-    "LLM_MODEL": "gemini-1.5-flash",
+    "PINECONE_INDEX_NAME": "tilak-academic-site-768",
+    "PINECONE_ENVIRONMENT": "us-east-1",
+    "LLM_MODEL": "gemini-2.5-flash",
     "EMBED_MODEL": "text-embedding-004",
     "ENVIRONMENT": "production",
-    "LOG_LEVEL": "INFO"
+    "LOG_LEVEL": "INFO",
+    "DEBUG": "False",
+    "ALLOWED_ORIGINS": "[\"http://localhost:4000\",\"https://parajuli-ai.github.io\"]",
+    "TOP_K_RESULTS": "5",
+    "MAX_FILE_SIZE_MB": "10",
+    "CHUNK_SIZE": "1000",
+    "CHUNK_OVERLAP": "200",
+    "SIMILARITY_THRESHOLD": "0.3",
+    "MAX_CONTEXT_LENGTH": "4000"
   }
 }
