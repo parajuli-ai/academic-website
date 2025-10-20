@@ -5,8 +5,7 @@ title: Home
 
 <div class="home-hero">
     <div class="profile-section">
-        <!-- <img src="/assets/images/profile.jpg" alt="Tilak Parajuli" class="profile-photo"> -->
-        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Tilak Parajuli" class="profile-photo">
+        <img src="/assets/images/profile.jpg" alt="Tilak Parajuli" class="profile-photo">
         <div class="profile-info">
             <h1>Tilak Parajuli</h1>
             <p class="bio">AI/ML Researcher | BSc Computer Science</p>
