@@ -1,20 +1,14 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
-    }
+    { "src": "app.py", "use": "@vercel/python" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
+    { "src": "/(.*)", "dest": "app.py" }
   ],
   "env": {
-    "GOOGLE_API_KEY": "@google_api_key",
-    "PINECONE_API_KEY": "@pinecone_api_key",
+    "GOOGLE_API_KEY": "@GOOGLE_API_KEY",
+    "PINECONE_API_KEY": "@PINECONE_API_KEY",
     "PINECONE_INDEX_NAME": "tilak-academic-site-768",
     "PINECONE_ENVIRONMENT": "us-east-1",
     "LLM_MODEL": "gemini-2.5-flash",
