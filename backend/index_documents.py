@@ -1,3 +1,4 @@
+#backend/index_documents.py
 """
 Script to index website documents for RAG
 Run this script to create/update the vector store
