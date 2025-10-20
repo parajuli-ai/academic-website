@@ -6,7 +6,7 @@ email: tilak.parajuli.58@gmail.com
 description: >-
   AI and machine learning researcher with expertise in data analysis, information retrieval,
   and applied research. Focused on generative AI and agentic systems.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/academic-website" # the subpath of your site, e.g. /blog
 url: "https://parajuli-ai.github.io" # your site URL
 
 # Author Information
