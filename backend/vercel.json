@@ -1,20 +1,12 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
-    }
+    { "src": "app.py", "use": "@vercel/python" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
+    { "src": "/(.*)", "dest": "app.py" }
   ],
   "env": {
-    "GOOGLE_API_KEY": "@google_api_key",
-    "PINECONE_API_KEY": "@pinecone_api_key",
     "PINECONE_INDEX_NAME": "tilak-academic-site-768",
     "PINECONE_ENVIRONMENT": "us-east-1",
     "LLM_MODEL": "gemini-2.5-flash",
@@ -22,9 +14,9 @@
     "ENVIRONMENT": "production",
     "LOG_LEVEL": "INFO",
     "DEBUG": "False",
-    "ALLOWED_ORIGINS": "[\"http://localhost:4000\", \"https://parajuli-ai.github.io\"]",
+    "ALLOWED_ORIGINS": "[\"http://localhost:4000\",\"https://parajuli-ai.github.io\"]",
     "TOP_K_RESULTS": "5",
-    "MAX_FILE_SIZE_MB": "10",
+    "MAX_FILE_SIZE_MB": "5",
     "CHUNK_SIZE": "1000",
     "CHUNK_OVERLAP": "200",
     "SIMILARITY_THRESHOLD": "0.3",
