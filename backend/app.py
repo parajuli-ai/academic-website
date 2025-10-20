@@ -10,6 +10,7 @@ from typing import List, Optional
 import hashlib
 from datetime import datetime
 import uuid
+import os
 
 from config import settings
 from models import (
@@ -32,7 +33,6 @@ llm_service: Optional[LLMService] = None
 # Document tracking (in-memory for now, use DB in production)
 documents_db: dict = {}
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan manager"""
@@ -52,11 +52,9 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.warning(f"Failed to initialize services: {str(e)}")
         logger.warning("Server will start in limited mode - some endpoints may not work")
-        # Don't raise the exception, allow server to start in limited mode
         yield
     finally:
         logger.info("Shutting down RAG backend services...")
-
 
 # ============================================
 # FastAPI Application
@@ -71,14 +69,15 @@ app = FastAPI(
 # ============================================
 # Middleware
 # ============================================
+# Parse ALLOWED_ORIGINS from environment variable
+allowed_origins = os.getenv("ALLOWED_ORIGINS", '["http://localhost:4000", "https://parajuli-ai.github.io"]').strip('[]').split(',')
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.ALLOWED_ORIGINS,
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # ============================================
 # Dependency Injection
@@ -91,7 +90,6 @@ def get_doc_processor() -> DocumentProcessor:
         )
     return doc_processor
 
-
 def get_vector_store() -> VectorStoreService:
     if vector_store is None:
         raise HTTPException(
@@ -100,7 +98,6 @@ def get_vector_store() -> VectorStoreService:
         )
     return vector_store
 
-
 def get_llm_service() -> LLMService:
     if llm_service is None:
         raise HTTPException(
@@ -108,7 +105,6 @@ def get_llm_service() -> LLMService:
             detail="LLM service not initialized"
         )
     return llm_service
-
 
 # ============================================
 # API Routes
@@ -122,7 +118,6 @@ async def root():
         "version": settings.APP_VERSION,
         "docs": "/docs"
     }
-
 
 @app.get("/health", response_model=HealthResponse)
 async def health_check(
@@ -159,7 +154,6 @@ async def health_check(
             version=settings.APP_VERSION,
             services={"error": str(e)}
         )
-
 
 @app.post("/upload", response_model=DocumentUploadResponse)
 async def upload_document(
@@ -238,7 +232,6 @@ async def upload_document(
             detail=f"Failed to process document: {str(e)}"
         )
 
-
 @app.post("/chat", response_model=ChatResponse)
 async def chat(
     request: ChatRequest,
@@ -282,7 +275,6 @@ async def chat(
             detail=f"Failed to process chat request: {str(e)}"
         )
 
-
 @app.get("/documents", response_model=DocumentListResponse)
 async def list_documents():
     """
@@ -300,7 +292,6 @@ async def list_documents():
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e)
         )
-
 
 @app.delete("/documents/{document_id}")
 async def delete_document(
@@ -336,7 +327,6 @@ async def delete_document(
             detail=str(e)
         )
 
-
 # ============================================
 # Error Handlers
 # ============================================
@@ -352,7 +342,6 @@ async def http_exception_handler(request, exc):
         ).model_dump()
     )
 
-
 @app.exception_handler(Exception)
 async def general_exception_handler(request, exc):
     """Handle general exceptions"""
@@ -363,17 +352,4 @@ async def general_exception_handler(request, exc):
             error="Internal server error",
             detail=str(exc) if settings.DEBUG else None
         ).model_dump()
-    )
-
-
-# ============================================
-# Entry Point for Local Development
-# ============================================
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(
-        "app:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=settings.DEBUG
     )
