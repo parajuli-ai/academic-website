@@ -1,11 +1,13 @@
 # Site Settings
+# _config.yml
+# Site Settings
 title: "Tilak Parajuli"
 email: tilak.parajuli.58@gmail.com
 description: >-
   AI and machine learning researcher with expertise in data analysis, information retrieval,
   and applied research. Focused on generative AI and agentic systems.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yourusername.github.io" # your site URL
+url: "https://parajuli-ai.github.io" # your site URL
 
 # Author Information
 author:
@@ -79,4 +81,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+
+
 
