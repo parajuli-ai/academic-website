@@ -70,7 +70,13 @@ app = FastAPI(
 # Middleware
 # ============================================
 # Parse ALLOWED_ORIGINS from environment variable
-allowed_origins = os.getenv("ALLOWED_ORIGINS", '["http://localhost:4000", "https://parajuli-ai.github.io"]').strip('[]').split(',')
+# allowed_origins = os.getenv("ALLOWED_ORIGINS", '["http://localhost:4000", "https://parajuli-ai.github.io"]').strip('[]').split(',')
+
+allowed_origins = json.loads(os.getenv(
+    "ALLOWED_ORIGINS",
+    '["http://localhost:4000", "https://parajuli-ai.github.io"]'
+))
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
