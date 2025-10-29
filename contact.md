@@ -22,9 +22,9 @@ Interested in research collaborations, AI projects, consulting opportunities, or
 
 ## Professional Networks
 
-**LinkedIn**: [linkedin.com/in/tilak-parajuli](https://linkedin.com/in/tilak-parajuli)
+**LinkedIn**: [linkedin.com/in/tilak-parajuli](https://www.linkedin.com/in/tilak-parajuli-777411179/)
 
-**GitHub**: [github.com/tilak-parajuli](https://github.com/tilak-parajuli)
+**GitHub**: [github.com/tilak-parajuli](https://github.com/parajulitilak)
 
 ---
 
