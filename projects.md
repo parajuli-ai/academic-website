@@ -148,7 +148,7 @@ Built comprehensive evaluation system for time-series forecasting models.
 
 ## Code Repositories
 
-Active development and project repositories available on [GitHub](https://github.com/tilak-parajuli).
+Active development and project repositories available on [GitHub](https://github.com/parajulitilak).
 
 ---
 
