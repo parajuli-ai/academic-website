@@ -15,7 +15,7 @@ toc: true
     <a href="https://parajuli-ai.github.io/academic-website/" target="_blank" rel="noopener">Website</a>
   </p>
   <p class="cv-download">
-    <a href="{{ '/assets/cv.pdf' | relative_url }}" class="btn" target="_blank">Download PDF</a>
+    <a href="{{ '/assets/CV_jan_2026.pdf' | relative_url }}" class="btn" target="_blank">Download PDF</a>
   </p>
 </div>
 
@@ -171,5 +171,5 @@ Alternate Email: [dewank.mahajan.ms@gmail.com](mailto:dewank.mahajan.ms@gmail.co
 
 <div class="cv-footer">
   <p>Last Updated: Jan. 2026</p>
-  <p><a href="{{ '/assets/cv.pdf' | relative_url }}" class="btn">Download PDF Version</a></p>
+  <p><a href="{{ '/assets/CV_jan_2026.pdf' | relative_url }}" class="btn">Download PDF Version</a></p>
 </div>
