@@ -5,158 +5,140 @@ permalink: /projects/
 toc: true
 ---
 
-## Technical Projects
+## Featured Projects
 
 ---
 
-### Text Summarization with LSA and T5 Transformers
-**Duration**: February – April 2024  
-**Technologies**: Python, Transformers (T5), LSA, TF-IDF, ROUGE
+### RAG Pipeline for Job Data Retrieval
+**Duration**: July 2025  
+**Technologies**: Python, FastAPI, LlamaIndex, ChromaDB, Cohere, Docker  
+**Links**: [GitHub Repository](https://github.com/parajulitilak/RAG-Pipeline-for-Job-Data-Retrieval)
 
-Implemented dual-approach text summarization combining extractive (LSA) and abstractive (T5) methods.
+Designed an end-to-end Retrieval-Augmented Generation (RAG) system for intelligent job search and matching over structured and unstructured datasets.
 
-**Technical Implementation**:
-- Extractive: TF-IDF vectorization → SVD decomposition → sentence ranking
-- Abstractive: Fine-tuned T5 transformer for coherent summary generation
-- TF-IDF threshold-based preview feature for navigation enhancement
-- Comprehensive evaluation using ROUGE-1, ROUGE-2, ROUGE-L metrics
-
-**Outcome**: Demonstrated effectiveness of hybrid approach through quantitative evaluation
+**Key Innovations**:
+- **Hybrid Retrieval**: Combined BM25 sparse retrieval with dense vector embeddings to improve recall.
+- **Advanced Reranking**: Integrated Cohere Rerank to sharpen the contextual relevance of retrieved chunks before generation.
+- **Orchestration**: Used LlamaIndex for document ingestion and query management.
+- **Deployment**: Fully containerized using Docker with a FastAPI backend exposing REST endpoints.
 
 ---
 
-### Real-Time Gaze Detection System
-**Duration**: May 2024 – Present  
+### Travya - Agentic AI Travel Companion
+**Duration**: Jan 2025 – Dec 2025  
+**Technologies**: Python, LangGraph, React, PostgreSQL, Redis, Docker  
+**Links**: [GitHub Repository](https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion)
+
+Developed a platform using a **multi-agent architecture** where specialized agents handle research, planning, and booking operations autonomously.
+
+**Key Innovations**:
+- **Multi-Agent System**: Orchestrated distinct agents for different stages of the travel workflow.
+- **Streaming UI**: Built a real-time conversational interface with React and FastAPI.
+- **RAG Engine**: personalized recommendations driven by vector search.
+- **Microservices**: Scalable architecture with Redis caching and JWT-based authentication.
+
+---
+
+### Text Summarization with LSA and T5
+**Duration**: Feb 2024 – Apr 2024  
+**Technologies**: Python, Transformers (T5), LSA, NLP  
+**Links**: [GitHub Repository](https://github.com/parajulitilak/seventh_sem_project/tree/main/summarizer_app)
+
+Implemented a dual-approach summarization system combining classical statistical methods with modern neural networks.
+
+**Key Innovations**:
+- **Hybrid Approach**: Extractive summarization via Latent Semantic Analysis (LSA) and abstractive via fine-tuned T5 transformers.
+- **Performance**: Engineered a TF-IDF threshold-based pipeline for "preview" summaries.
+- **Evaluation**: Validated results using ROUGE metrics (ROUGE-1, ROUGE-2, ROUGE-L).
+
+---
+
+## Professional Implementations
+
+---
+
+### Multi-Agent Tax & Environmental Systems
+**Organization**: Climate Clean Solutions & LowPropTax (California/Nepal)  
+**Duration**: Jan 2026 – Present  
+**Technologies**: LLMs, AirGradient, S3, Parquet, Power BI
+
+Leading the development of autonomous systems for property tax appeals and environmental monitoring.
+
+**Deliverables**:
+- **Agentic Valuation**: Developing an AI system using RAG/CAG to automate property tax appeals by retrieving comparable properties.
+- **Data Lake Architecture**: Managed an S3-based data lake with Parquet storage and dimensional modeling.
+- **IoT Pipelines**: Real-time processing of air quality data (PM2.5, NO₂, CO₂) from AirGradient sensors.
+- **Visualization**: Built Power BI dashboards for time-series anomaly detection and geospatial insights.
+
+---
+
+### Fuse Proctor & Model Evaluation
 **Organization**: Fusemachines Nepal  
-**Technologies**: MediaPipe FaceMesh, React, JavaScript
+**Duration**: June 2025 – Sept 2025  
+**Technologies**: MediaPipe, React, Vision-Language Models, Python
 
-Developed real-time gaze tracking for Fuse Proctor application with directional classification.
+Contributed to the core AI capabilities of the Fuse Proctoring platform and internal research.
 
-**Features**:
-- Real-time facial landmark detection using MediaPipe
-- Directional gaze classification (left, right, center, up, down)
-- In-browser calibration system for accuracy optimization
-- Low-latency processing for seamless user experience
-- React frontend integration with state management
+**Deliverables**:
+- **Gaze Tracking**: Implemented real-time directional gaze detection using MediaPipe FaceMesh with in-browser calibration.
+- **Time-Series Framework**: Developed a notebook-based evaluation suite (MAE, RMSE, SMAPE) for forecasting models.
+- **Agentic Research**: Created prototypes for agent loops and memory management.
+- **Vision-Language**: Explored CLIP and PaliGemma 2 for liveness detection improvements.
 
-**Impact**: Enhanced proctoring capabilities with reliable gaze monitoring
+---
+
+### RPA & Medical Data Standardization
+**Organization**: Quickfox Consulting  
+**Duration**: Feb 2025 – May 2025  
+**Technologies**: RPA Framework, LLMs, Python
+
+Automated business operations and legacy data management.
+
+**Deliverables**:
+- **Intelligent Cleaning**: Leveraged LLMs to standardize and validate noisy legacy medical databases.
+- **Bot Deployment**: Deployed RPA bots for web scraping, form submission, and Excel consolidation.
+- **Impact**: Achieved >10% reduction in manual processing time and established automated QA pipelines.
+
+---
+
+### Radiation Oncology Data Analysis
+**Organization**: NAAMII  
+**Duration**: June 2024 – Sept 2024  
+**Technologies**: Biostatistics, Python, Radiomics
+
+Conducted clinical research analysis under Dr. Taman Upadhaya.
+
+**Deliverables**:
+- **Statistical Modeling**: Performed Permutation tests, ROC AUC, and correlation analysis on clinical and radiomics data.
+- **Preprocessing**: Handled normality testing and data cleaning for independent/dependent samples.
+- **Outcome**: Developed ML algorithms to correlate radiomics features with patient outcomes.
+
+---
+
+## Academic & Archived Projects
 
 ---
 
 ### Music Recommendation System
-**Duration**: January 2024  
-**Technologies**: Python, Scikit-learn, Pandas, NumPy
+**Duration**: Jan 2024  
+**Technologies**: Scikit-learn, Pandas, SVD
 
-Built collaborative filtering system using Singular Value Decomposition for personalized recommendations.
-
-**Architecture**:
-- User-item interaction matrix construction
-- SVD-based matrix factorization for dimensionality reduction
-- Similarity computation using cosine similarity
-- Top-N recommendation algorithm with configurable parameters
-
-**Performance**: Achieved accurate preference predictions through optimized SVD implementation
+Built a collaborative filtering system using Singular Value Decomposition.
+- Constructed user-item interaction matrices.
+- Implemented cosine similarity for top-N recommendations.
 
 ---
 
-### Agentic AI Framework Prototypes
-**Duration**: May 2024 – Present  
-**Organization**: Fusemachines Nepal  
-**Technologies**: Python, LangChain, LangGraph, OpenAI API
-
-Created research prototypes exploring agentic AI architectures and patterns.
-
-**Research Areas**:
-- Agent loop architectures (ReAct, Plan-and-Execute)
-- Short-term and long-term memory management
-- Prompt optimization strategies for agent behavior
-- Multi-agent communication protocols
-- Tool use and function calling patterns
-
-**Applications**: Integration planning for production agentic systems
-
----
-
-### Medical Database Cleaning with LLMs
-**Duration**: February – May 2024  
-**Organization**: Quickfox Consulting  
-**Technologies**: Python, Large Language Models, Data Validation
-
-Led automated data cleaning initiative for legacy medical databases.
-
-**Solution**:
-- LLM-based terminology standardization
-- Automated data validation pipeline
-- Consistency checking across records
-- Quality assurance protocols
-
-**Results**: 80% reduction in manual effort, significantly improved data quality
-
----
-
-### RPA Automation Suite
-**Duration**: February – May 2024  
-**Organization**: Quickfox Consulting  
-**Technologies**: RPA Framework, Python, Selenium
-
-Developed robotic process automation solutions for business operations.
-
-**Automated Processes**:
-- Cross-platform data entry and form submissions
-- Web scraping with dynamic content handling
-- Email automation and notification systems
-- Excel processing and data merging
-- Desktop and web application integration
-
-**Business Impact**: Enhanced efficiency and accuracy across multiple departments
-
----
-
-### OCR System Development
-**Duration**: April – October 2023  
+### OCR Data Systems
 **Organization**: Treeleaf Technologies  
-**Technologies**: Python, OpenCV, TensorFlow
+**Duration**: Apr 2023 – Oct 2023  
+**Technologies**: Python, OpenCV
 
-Contributed to optical character recognition system through data preparation and analysis.
-
-**Contributions**:
-- High-quality data labeling for supervised learning
-- Exploratory data analysis on training datasets
-- Feature engineering for improved accuracy
-- Data preprocessing pipeline development
-- Quality assurance for annotation consistency
-
----
-
-### Time-Series Model Evaluation Framework
-**Duration**: May 2024 – Present  
-**Organization**: Fusemachines Nepal  
-**Technologies**: Python, Pandas, Matplotlib, Seaborn
-
-Built comprehensive evaluation system for time-series forecasting models.
-
-**Features**:
-- Multiple evaluation metrics (MAE, RMSE, MAPE, SMAPE)
-- Comparative visualization tools
-- Statistical significance testing
-- Residual analysis capabilities
-- Modular architecture for extensibility
-
-**Usage**: Deployed for production model evaluation after peer review
+- Performed Exploratory Data Analysis (EDA) and feature engineering.
+- Managed data labeling workflows for supervised OCR learning tasks.
 
 ---
 
 ## Code Repositories
 
-Active development and project repositories available on [GitHub](https://github.com/parajulitilak).
-
----
-
-## Future Directions
-
-**Exploring**:
-- Advanced multimodal AI systems
-- Production-scale agentic architectures
-- Neural information retrieval methods
-- Real-time computer vision applications
-- Efficient model deployment strategies
+Explore my code and contributions on **[GitHub](https://github.com/parajulitilak)**.

@@ -9,64 +9,60 @@ toc: true
 
 ---
 
-### AI/ML Intern | AI Fellow
-**Fusemachines Nepal, Kathmandu**  
-**May 2024 – Present**
+### Data Scientist
+**Climate Clean Solutions & LowPropTax**  
+*Hybrid (California, USA / Kathmandu, Nepal)*  
+**Jan 2026 – Present**
 
-Intensive AI fellowship through competitive scholarship covering Machine Learning, Deep Learning, NLP, Computer Vision, and MLOps.
+Developing autonomous systems for property tax valuation and environmental monitoring.
 
-**Key Contributions**:
-- Developed time-series model evaluation framework with comprehensive metrics and visualizations
-- Implemented real-time gaze detection system using MediaPipe FaceMesh and React
-- Created agentic AI prototypes exploring agent loops, memory management, and prompt strategies
-- Researched vision-language models (CLIP, BLIP, PaliGemma 2) for multimodal applications
-- Collaborated on liveness detection and multi-person monitoring enhancements
+**Key Responsibilities**:
+- **Multi-Agent AI**: Developing and optimizing a system for property tax appeals using LLMs, RAG/CAG, and API-driven retrieval.
+- **Valuation Models**: Designing adjustment models incorporating physical attributes, neighborhood signals (crime, schools), and climate factors.
+- **Data Engineering**: Managing an S3-based data lake with Parquet storage; building real-time pipelines for AirGradient sensors (PM2.5, NO₂, CO₂).
+- **BI & Analytics**: Creating Power BI dashboards for time-series analysis, anomaly detection, and geospatial insights.
+- **QA Automation**: Implementing validation pipelines with historical benchmarking to enforce >10% reduction thresholds.
 
 ---
 
-### AI Research Intern
-**NAAMII, Kathmandu**  
-**June – September 2024 | Hybrid**
+### AI/ML Intern
+**Fusemachines Nepal, Kathmandu**  
+**June 2025 – September 2025**
 
-Research internship in radiation oncology outcomes under Dr. Taman Upadhaya (Cedars-Sinai & NAAMII).
+Worked on core product features and internal research initiatives.
 
-**Research Activities**:
-- Clinical and radiomics data analysis for oncology research
-- Statistical hypothesis testing (permutation tests, t-tests) on patient cohorts
-- ROC AUC analysis for model performance evaluation
-- Correlation analysis (Pearson, Spearman) on clinical features
-- Machine learning model development for outcome prediction
-- Data preprocessing and quality assessment protocols
+**Key Contributions**:
+- **Time-Series Evaluation**: Developed a notebook-based evaluation framework (MAE, RMSE, MAPE, SMAPE) for forecasting models.
+- **Gaze Detection**: Implemented real-time directional gaze tracking in Fuse Proctor using MediaPipe FaceMesh and React.
+- **Agentic AI**: Created academic prototypes for agent loops, memory management, and prompt strategies.
+- **Vision-Language**: Explored CLIP, BLIP, and PaliGemma 2 for liveness detection and multi-person monitoring.
 
 ---
 
 ### RPA Developer
 **Quickfox Consulting, Kathmandu**  
-**February – May 2024 | Full-Time**
+**February 2025 – May 2025**
 
-Automation developer focusing on business process optimization through RPA solutions.
+Focused on business process automation and legacy data modernization.
 
 **Major Projects**:
-- Developed RPA bots using RPA Framework for cross-platform automation
-- Led medical database cleaning project using large language models (80% efficiency gain)
-- Automated data entry, web scraping, email workflows, and Excel processing
-- Collaborated with teams to identify automation opportunities
-- Implemented comprehensive testing and validation protocols
+- **Bot Development**: Deployed RPA bots using the RPA Framework for data entry, web scraping, and Excel merging.
+- **LLM Data Cleaning**: Led a project to standardize and validate legacy medical databases using Large Language Models.
+- **Efficiency**: Significantly improved accuracy and productivity by automating repetitive web and desktop tasks.
 
 ---
 
-### ML Intern
-**Treeleaf Technologies, Lalitpur**  
-**April – October 2023 | Hybrid**
+### AI Research Intern
+**NAAMII, Kathmandu**  
+*Hybrid*  
+**June 2024 – September 2024**
 
-Machine learning internship supporting OCR system development and data pipeline optimization.
+Contributed to radiation oncology research under Dr. Taman Upadhaya.
 
-**Responsibilities**:
-- Data labeling and annotation for supervised learning
-- Exploratory data analysis on training datasets
-- Feature engineering for model performance improvement
-- Data preprocessing pipeline development
-- Quality assurance for machine learning datasets
+**Research Activities**:
+- **Clinical Analysis**: Performed data preprocessing, normality testing, and statistical analysis on clinical/radiomics data.
+- **Statistical Modeling**: Conducted Permutation tests, ROC AUC analysis, and correlation studies (Pearson/Spearman).
+- **ML Implementation**: Applied Machine Learning and Deep Learning techniques to predictive modeling for patient outcomes.
 
 ---
 
@@ -74,28 +70,33 @@ Machine learning internship supporting OCR system development and data pipeline 
 
 ### Bachelor of Science in Computer Science and Information Technology
 **Tribhuvan University, Bhaktapur Multiple Campus**  
-**December 2019 – October 2024 | GPA: 78/100**
+**Dec 2019 – Oct 2024 | Score: 78/100**
 
-**Core Coursework**: Artificial Intelligence | Data Mining | Information Retrieval | Probability and Statistics | Data Structures and Algorithms | Computer Graphics | Multimedia Computing | Geographical Information System
+**Major/Electives**: Artificial Intelligence, Data Mining, Information Retrieval, Probability & Statistics, Data Structures & Algorithms, GIS, Multimedia Computing.
 
 ---
 
-## Certifications
+## Licenses & Certifications
+
+**Full Scholarship – Sixth Annual Nepal AI School (ANAIS 2025)**  
+NAAMII | <a href="https://anais.naamii.org.np/" target="_blank" rel="noopener">Program Details</a>  
+*Awarded full scholarship for intensive 11-day program with global AI researchers.*
+
+**AI Fellow (2025) – Microdegree™ in Artificial Intelligence**  
+Fusemachines | <a href="https://s3.amazonaws.com/fuseclassroom-resources-prod/student-certificates/Microdegree%E2%84%A2+in+Artificial+Intelligence+2025-TILAK+PARAJULI.pdf" target="_blank" rel="noopener">Certificate</a>  
+*Competitive full scholarship program covering ML, DL, NLP, CV, and MLOps.*
 
 **AI Agents and Agentic AI with Python & Generative AI**  
-Vanderbilt University | July 2025 — <a href="https://www.coursera.org/account/accomplishments/records/KMGDUS3XLEDS" target="_blank" rel="noopener">Verify</a>
-
-**AI Fellow (Microdegree™)**  
-Fusemachines | 2024 – Present
+Vanderbilt University (Coursera) | July 2025 | <a href="https://www.coursera.org/account/accomplishments/records/KMGDUS3XLEDS" target="_blank" rel="noopener">Verify</a>
 
 **Level II Python Certification**  
-Robocorp | February 2025 — <a href="https://downloads.robocorp.com/certificates/level1python/a19056e2-31db-46e0-814a-6fb475a170c7.pdf" target="_blank" rel="noopener">Verify</a>
+Robocorp | Feb 2025 | <a href="https://downloads.robocorp.com/certificates/level1python/a19056e2-31db-46e0-814a-6fb475a170c7.pdf" target="_blank" rel="noopener">Verify</a>
 
 **Programming in Python**  
-Meta | January 2024 | Credential: 45GQSH2LGDZY — <a href="https://www.coursera.org/account/accomplishments/records/45GQSH2LGDZY" target="_blank" rel="noopener">Verify</a>
+Meta (Coursera) | Jan 2024 | <a href="https://www.coursera.org/account/accomplishments/records/45GQSH2LGDZY" target="_blank" rel="noopener">Verify</a>
 
 **Elements of AI**  
-University of Helsinki & Reaktor | March 2022 — <a href="https://certificates.mooc.fi/validate/g367b14of29" target="_blank" rel="noopener">Verify</a>
+University of Helsinki | Mar 2022 | <a href="https://certificates.mooc.fi/validate/g367b14of29" target="_blank" rel="noopener">Verify</a>
 
 ---
 
@@ -105,36 +106,37 @@ University of Helsinki & Reaktor | March 2022 — <a href="https://certificates.
 **Tribhuvan University, Bhaktapur Multiple Campus**  
 **March 2023 – Present**
 
-Elected representative (top vote count in TU FSU 2023 election).
-
-**Responsibilities**:
-- Campus-wide event organization and coordination
-- Student welfare advocacy and policy discussions
-- Liaison between students and administration
-- Facilitating academic and extracurricular initiatives
+- Elected with one of the highest vote counts in the TU FSU 2023 election.
+- Organized campus-wide events and served as a liaison between students, faculty, and administration.
 
 ---
 
 ## Technical Skills
 
-**Programming**: Python, C, C++, Bash
-
-**ML/AI Frameworks**: PyTorch, TensorFlow, Scikit-Learn, Hugging Face, LangChain, LangGraph
-
-**Development Tools**: Docker, Git, GitHub, MLflow, Jupyter, VS Code
-
-**Web Technologies**: FastAPI, Django, REST API, React, Streamlit
-
-**Data & Databases**: NumPy, Pandas, PostgreSQL, MongoDB, MySQL
-
-**Specialized**: RPA Framework, OpenCV, MediaPipe, NLTK, Selenium
+**Languages**: Python, C, C++, Bash  
+**LLMs & Agents**: LangChain, LangGraph, RAG, CAG, Hugging Face  
+**Data Science**: Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, MLflow  
+**Data Engineering**: Airflow, Parquet, S3, ETL Pipelines, Dimensional Modeling  
+**Cloud & Ops**: AWS (S3, EC2, IAM), Docker, Git  
+**Visualization**: Power BI, GIS Mapping, Time-Series Dashboards  
+**Web**: FastAPI, Django, RESTful APIs  
+**Databases**: PostgreSQL, MySQL, MongoDB  
 
 ---
 
-## Academic Reference
+## References
 
-**Dr. Taman Upadhaya, M.S., Ph.D.**  
-Researcher, Cedars-Sinai Medical Center & NAAMII  
-Expert in Data Science, Computer Vision, Medical Image Processing
+**Dewank Mahajan**  
+*Chief Data Officer (CDO) & Senior Data Leader*  
+Emails: [dewank@climatecleansolutions.com](mailto:dewank@climatecleansolutions.com) | [dewank@lowproptax.com](mailto:dewank@lowproptax.com)  
+[LinkedIn Profile](https://www.linkedin.com/in/dewank-mahajan/)
 
-Email: taman.upadhaya@naamii.org.np
+**Taman Upadhaya, M.S., Ph.D.**  
+*Researcher, Cedars-Sinai & NAAMII*  
+Email: [taman.upadhaya@naamii.org.np](mailto:taman.upadhaya@naamii.org.np)  
+[ResearchGate](https://www.researchgate.net/profile/Taman-Upadhaya)
+
+**Rojesh M. Shikhrakar**  
+*AI Researcher & Industry Practitioner, Fusemachines*  
+Email: [rojesh@fusemachines.com](mailto:rojesh@fusemachines.com)  
+[Website](https://rojeshshikhrakar.com.np/)
