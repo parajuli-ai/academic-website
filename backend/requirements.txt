@@ -30,7 +30,7 @@ pinecone-plugin-inference==1.1.0
 pinecone-plugin-interface==0.0.7
 portalocker==3.2.0
 proto-plus==1.26.1
-protobuf==5.29.5
+protobuf==4.21.12
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
 pydantic==2.9.2
