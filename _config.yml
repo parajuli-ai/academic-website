@@ -1,24 +1,27 @@
 # Site Settings
-# _config.yml
-# Site Settings
-title: "Tilak Parajuli"
+title: "Tilak Parajuli — AI/ML Engineer"
 email: tilak.parajuli.58@gmail.com
 description: >-
-  AI and machine learning researcher with expertise in data analysis, information retrieval,
-  and applied research. Focused on generative AI and agentic systems.
-baseurl: "/academic-website" # the subpath of your site, e.g. /blog
-url: "https://parajuli-ai.github.io" # your site URL
+  Tilak Parajuli is an AI/ML Engineer who designs and ships production AI systems:
+  multi-agent pipelines, RAG, LLM fine-tuning, and vector search,
+  deployed on AWS with Docker and CI/CD.
+baseurl: "/academic-website"
+url: "https://parajuli-ai.github.io"
+
+# Blog
+permalink: /:year/:month/:day/:title/
+disqus_shortname: tilak-parajuli
 
 # Author Information
 author:
   name: "Tilak Parajuli"
-  bio: "AI/ML Researcher | BSc Computer Science | AI Fellow at Fusemachines"
+  bio: "AI/ML Engineer"
   location: "Kathmandu, Nepal"
   email: tilak.parajuli.58@gmail.com
   linkedin: tilak-parajuli
   github: parajulitilak
-  orcid: ""
-  google_scholar: ""
+  orcid: "0009-0007-1545-8400"
+  google_scholar: "WAKS2J4AAAAJ"
   twitter: ""
 
 # Build Settings
@@ -41,7 +44,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Tilak Parajuli"
   - scope:
       path: ""
       type: "pages"
@@ -50,26 +53,14 @@ defaults:
 
 # Navigation
 navigation:
-  - title: Home
-    url: /
-  - title: Research
-    url: /research
-  - title: Projects
-    url: /projects
-  - title: Experience
-    url: /experience
+  - title: Work
+    url: /work
+  - title: Blog
+    url: /blog
   - title: CV
     url: /cv
   - title: Contact
     url: /contact
-  - title: Chat
-    url: /chat
-
-# Google Analytics (optional - add your tracking ID)
-google_analytics: # UA-XXXXXXXXX-X
-
-# Chat API Configuration
-chat_api_url: "https://your-backend.vercel.app"
 
 # Exclude from processing
 exclude:
@@ -81,6 +72,15 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
-
-
-
+  - BACKEND_COMPLETE.md
+  - CHANGELOG.md
+  - COMPLETE_OVERVIEW.md
+  - DEPLOYMENT_GUIDE.md
+  - DESIGN_RESEARCH.md
+  - FILE_LISTING.md
+  - NAVBAR_FIX.md
+  - PROJECT_STRUCTURE.md
+  - PROJECT_SUMMARY.md
+  - QUICK_START.md
+  - SETUP_CHECKLIST.md
+  - START_HERE.md
