@@ -2,9 +2,8 @@
 title: "Tilak Parajuli — AI/ML Engineer"
 email: tilak.parajuli.58@gmail.com
 description: >-
-  Tilak Parajuli is an AI/ML Engineer who designs and ships production AI systems:
-  multi-agent pipelines, RAG, LLM fine-tuning, and vector search,
-  deployed on AWS with Docker and CI/CD.
+  I build production AI systems: multi-agent pipelines, RAG, and LLM fine-tuning.
+  Data Scientist at Climate Clean Solutions.
 baseurl: "/academic-website"
 url: "https://parajuli-ai.github.io"
 
@@ -84,3 +83,12 @@ exclude:
   - QUICK_START.md
   - SETUP_CHECKLIST.md
   - START_HERE.md
+  - backend/
+  - google2b6730afec9dbd8c.html
+
+sitemap:
+  exclude:
+    - /backend/**/*
+    - /assets/images/**/*
+    - /assets/tilak-parajuli-cv.pdf
+    - /google2b6730afec9dbd8c.html
