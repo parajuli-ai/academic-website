@@ -79,3 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
   link.setAttribute('rel', 'noopener noreferrer');
 });
+
+(function () {
+  var el = document.getElementById('email-link');
+  if (!el) return;
+  var u = 'tilak.parajuli.58', d = 'gmail.com';
+  var addr = u + '@' + d;
+  el.innerHTML = '<a href="mai' + 'lto:' + addr + '">' + addr + '</a>';
+})();
