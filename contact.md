@@ -18,5 +18,5 @@ Kathmandu, Nepal
 <h2 class="section-compact">Book a Meeting</h2>
 
 <div class="calendar-embed">
-<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3hS9LodcDNTsmAldKpajmLOR7KCMHxmCbugQraWyKP3HxMPFn8RG2TvI2Q07fozuFzH2uUrTEp?gv=true" title="Google Calendar Scheduling" frameborder="0" scrolling="no" loading="lazy"></iframe>
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3hS9LodcDNTsmAldKpajmLOR7KCMHxmCbugQraWyKP3HxMPFn8RG2TvI2Q07fozuFzH2uUrTEp?gv=true" title="Google Calendar Scheduling" frameborder="0" loading="lazy"></iframe>
 </div>
