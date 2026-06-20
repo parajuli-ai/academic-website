@@ -2,11 +2,12 @@
 layout: page
 title: Curriculum Vitae
 permalink: /cv/
-toc: true
+toc: false
+hide_title: true
 ---
 
 <div class="cv-header">
-  <h2 class="cv-name">Tilak Parajuli</h2>
+  <h1 class="cv-name">Tilak Parajuli</h1>
   <p class="cv-contact">
     Kathmandu, Nepal |
     <a href="mailto:tilak.parajuli.58@gmail.com">tilak.parajuli.58@gmail.com</a> |
@@ -18,7 +19,7 @@ toc: true
   </p>
 </div>
 
-AI/ML engineer who designs and ships end-to-end systems that automate real workflows. Experience across LLM fine-tuning (LoRA/PEFT), multi-agent and RAG pipelines, embeddings and vector search, prompt engineering, and model evaluation, with services deployed on AWS using Docker and orchestration.
+AI/ML engineer and data scientist building production systems where correctness is non-negotiable. I work across the applied-LLM stack: fine-tuning (LoRA/PEFT), multi-agent and RAG pipelines, embeddings and vector search, and rigorous model evaluation. My services run in production on AWS.
 
 ## Experience
 
@@ -34,15 +35,22 @@ AI/ML engineer who designs and ships end-to-end systems that automate real workf
 **AI Research Intern** | NAAMII
 *June 2024 to Sept 2024 · Kathmandu, Nepal*
 
-See the [Work](/academic-website/work/) page for detailed project descriptions and results, or download the full PDF above.
+See the [Work]({{ '/work/' | relative_url }}) page for detailed project descriptions and results, or download the full PDF above.
 
 ## Technical Skills
 
-**Languages:** Python, C, C++, Bash, SQL
-**Cloud & MLOps:** AWS (S3, EC2, IAM), Docker, Airflow, MLflow, Git, CI/CD
-**LLMs & Agentic AI:** Fine-tuning (LoRA/PEFT), RAG, multi-agent systems, prompt engineering, LangChain, LangGraph, Hugging Face
-**ML & Data:** PyTorch, TensorFlow, Scikit-learn, embeddings, vector search, Pandas, NumPy, Parquet
-**Web & Databases:** FastAPI, Django, PostgreSQL, MySQL, MongoDB, Redis
+<dl class="skills">
+  <dt>LLMs &amp; Agentic AI</dt>
+  <dd>Fine-tuning (LoRA/PEFT), RAG, multi-agent systems, prompt engineering, LangChain, LangGraph, Hugging Face</dd>
+  <dt>ML &amp; Data</dt>
+  <dd>PyTorch, TensorFlow, Scikit-learn, embeddings, vector search, Pandas, NumPy, Parquet</dd>
+  <dt>Languages</dt>
+  <dd>Python, C, C++, Bash, SQL</dd>
+  <dt>Cloud &amp; MLOps</dt>
+  <dd>AWS (S3, EC2, IAM), Docker, Airflow, MLflow, Git, CI/CD</dd>
+  <dt>Web &amp; Databases</dt>
+  <dd>FastAPI, Django, PostgreSQL, MySQL, MongoDB, Redis</dd>
+</dl>
 
 ## Education
 

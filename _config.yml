@@ -1,5 +1,5 @@
 # Site Settings
-title: "Tilak Parajuli — AI/ML Engineer"
+title: "Tilak Parajuli | AI/ML Engineer"
 email: tilak.parajuli.58@gmail.com
 description: >-
   I build production AI systems: multi-agent pipelines, RAG, and LLM fine-tuning.
@@ -53,13 +53,13 @@ defaults:
 # Navigation
 navigation:
   - title: Work
-    url: /work
+    url: /work/
   - title: Blog
-    url: /blog
+    url: /blog/
   - title: CV
-    url: /cv
+    url: /cv/
   - title: Contact
-    url: /contact
+    url: /contact/
 
 # Exclude from processing
 exclude:

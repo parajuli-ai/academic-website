@@ -5,7 +5,7 @@ permalink: /contact/
 toc: false
 ---
 
-Open to engineering roles, research collaborations, and technical discussions.
+Open to roles in applied AI/ML and research, collaborations, and technical conversations. Book a time below, or reach out directly.
 
 <p class="contact-links">
 <span id="email-link"><noscript>tilak.parajuli.58 [at] gmail.com</noscript></span> · 
@@ -18,5 +18,5 @@ Kathmandu, Nepal
 <h2 class="section-compact">Book a Meeting</h2>
 
 <div class="calendar-embed">
-<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3hS9LodcDNTsmAldKpajmLOR7KCMHxmCbugQraWyKP3HxMPFn8RG2TvI2Q07fozuFzH2uUrTEp?gv=true" title="Google Calendar Scheduling" frameborder="0" loading="lazy"></iframe>
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3hS9LodcDNTsmAldKpajmLOR7KCMHxmCbugQraWyKP3HxMPFn8RG2TvI2Q07fozuFzH2uUrTEp?gv=true" title="Google Calendar Scheduling" frameborder="0" scrolling="no" loading="lazy"></iframe>
 </div>
