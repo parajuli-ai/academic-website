@@ -4,8 +4,8 @@ email: tilak.parajuli.58@gmail.com
 description: >-
   I build production AI systems: multi-agent pipelines, RAG, and LLM fine-tuning.
   Data Scientist at Climate Clean Solutions.
-baseurl: "/academic-website"
-url: "https://parajuli-ai.github.io"
+baseurl: ""
+url: "https://tilakparajuli.name.np"
 
 # Blog
 permalink: /:year/:month/:day/:title/
