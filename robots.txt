@@ -1,4 +1,6 @@
+---
+---
 User-agent: *
 Allow: /
 
-Sitemap: https://parajuli-ai.github.io/academic-website/sitemap.xml
+Sitemap: {{ "/sitemap.xml" | absolute_url }}
