@@ -25,8 +25,8 @@
   --color-accent-soft: #eaeefb;    /* pale blue tint for highlights */
   --color-link: var(--color-accent);
   --color-link-hover: var(--color-accent-hover);
-  --color-cta: #115e59;            /* deep teal · CTAs only · white text 7.6:1 AAA */
-  --color-cta-hover: #134e4a;      /* 9.5:1 AAA */
+  --color-cta: var(--color-accent);        /* CTAs use the brand accent — one cohesive palette */
+  --color-cta-hover: var(--color-accent-hover);
 
   /* elevation */
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
@@ -771,14 +771,59 @@ img {
 .calendar-embed iframe {
   display: block;
   width: 100%;
-  height: 800px;
+  height: 1050px;
   border: 0;
   overflow: hidden;
 }
 
 @media (max-width: 640px) {
   .calendar-embed iframe {
-    height: 1400px;
+    height: 1600px;
+  }
+}
+
+/* Floating "Get in touch" — a persistent CTA fixed bottom-right on every page
+   (the layout hides it on the Contact page itself). */
+
+.fab-contact {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 950;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 1.2rem;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(23, 70, 201, 0.35);
+  text-decoration: none;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.fab-contact:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(23, 70, 201, 0.45);
+  transform: translateY(-2px);
+}
+
+.fab-contact svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .fab-contact {
+    right: 1rem;
+    bottom: 1rem;
   }
 }
 
