@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://parajuli-ai.github.io/academic-website/sitemap.xml
+Sitemap: https://tilakparajuli.name.np/sitemap.xml
