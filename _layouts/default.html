@@ -29,7 +29,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:image" content="{{ '/assets/images/profile.jpg' | absolute_url }}">
-    <meta property="og:site_name" content="Tilak Parajuli Portfolio">
+    <meta property="og:site_name" content="Tilak Parajuli">
     <meta property="og:locale" content="en_US">
     <meta property="profile:first_name" content="Tilak">
     <meta property="profile:last_name" content="Parajuli">
@@ -105,6 +105,16 @@
           "addressCountry": "NP"
         }
       }
+    }
+    </script>
+
+    <!-- WebSite schema: tells Google the site name to show in results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tilak Parajuli",
+      "url": "{{ site.url }}{{ site.baseurl }}/"
     }
     </script>
 
