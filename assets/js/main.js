@@ -1,15 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var header = document.querySelector('.site-header');
-  if (header) {
-    var h = header.getBoundingClientRect().height || 56;
-    document.documentElement.style.setProperty('--header-height', Math.ceil(h) + 'px');
-    window.addEventListener('resize', function () {
-      document.documentElement.style.setProperty(
-        '--header-height',
-        Math.ceil(header.getBoundingClientRect().height || 56) + 'px'
-      );
-    });
-  }
+  // Header height is a fixed CSS token (--header-height). It must NOT be
+  // recomputed from the rendered header here: the header's own height is
+  // driven by that same variable, so measuring it and writing it back forms
+  // a feedback loop that grew the navbar on every resize/zoom event.
 
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('primary-nav');
