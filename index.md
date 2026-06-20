@@ -26,7 +26,6 @@ title: Home
 
 <p class="cta-row">
   <a href="{{ '/assets/tilak-parajuli-cv.pdf' | relative_url }}" class="btn" target="_blank" rel="noopener">Download CV (PDF)</a>
-  <a href="{{ '/contact/' | relative_url }}" class="btn btn-secondary">Get in touch</a>
 </p>
 
 <div class="home-bio" markdown="1">
