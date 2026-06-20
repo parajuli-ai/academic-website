@@ -1,16 +1,40 @@
 :root {
-  --color-heading: #111;
-  --color-text: #333;
-  --color-text-secondary: #555;
-  --color-muted: #777;
-  --color-link: #1a0dab;
-  --color-link-hover: #0b0080;
-  --color-bg: #fff;
-  --color-surface: #fafafa;
-  --color-border: #e5e5e5;
+  /* ---- Light-mode palette · 60-30-10 distribution ----
+     60% surface : off-white page + white cards (low eye-strain, lets work pop)
+     30% structure: navy / charcoal / slate text and borders (authority)
+     10% accent  : royal-blue links (academic) + deep-teal CTAs (portfolio)
+     Every text colour is verified WCAG AAA (>=7:1) on the off-white base;
+     white-on-teal CTA text is 7.6:1 (AAA). */
+
+  /* 60 — surfaces */
+  --color-bg: #f8f9fa;             /* page base — off-white / alabaster */
+  --color-card: #ffffff;           /* cards & raised surfaces */
+  --color-surface: #eef2f7;        /* code blocks, subtle fills */
+
+  /* 30 — structure & text */
+  --color-heading: #0f172a;        /* navy     · 16.9:1 AAA */
+  --color-text: #334155;           /* charcoal ·  9.8:1 AAA */
+  --color-text-secondary: #475569; /* slate    ·  7.2:1 AAA */
+  --color-muted: #475569;          /* slate    ·  7.2:1 AAA */
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  /* 10 — accent */
+  --color-accent: #1746c9;         /* royal blue · links/anchors · 7.2:1 AAA */
+  --color-accent-hover: #143ca8;   /* 8.9:1 AAA */
+  --color-accent-soft: #eaeefb;    /* pale blue tint for highlights */
+  --color-link: var(--color-accent);
+  --color-link-hover: var(--color-accent-hover);
+  --color-cta: #115e59;            /* deep teal · CTAs only · white text 7.6:1 AAA */
+  --color-cta-hover: #134e4a;      /* 9.5:1 AAA */
+
+  /* elevation */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-card-hover: 0 8px 24px rgba(15, 23, 42, 0.10);
 
   --header-height: 56px;
-  --content-width: 960px;
+  --content-width: 1000px;   /* wide frame — same on every page; all text fills it equally */
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -63,10 +87,6 @@ h4 { font-size: var(--text-base); font-weight: 600; margin-top: 1.5em; }
 
 p {
   margin-bottom: 1.2em;
-  text-align: justify;
-  text-align-last: left;
-  -webkit-hyphens: auto;
-  hyphens: auto;
 }
 
 a {
@@ -76,6 +96,18 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Inline links in running prose are underlined — academic convention and
+   WCAG 1.4.1 (links not distinguished by colour alone). Scoped so nav,
+   buttons, the TOC and link clusters stay clean. */
+.home-bio a,
+.post-content a:not(.btn),
+.page-content li a:not(.btn),
+.page-content p:not([class]) a:not(.btn),
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 strong { font-weight: 600; color: var(--color-heading); }
@@ -117,8 +149,9 @@ main {
 /* Header — fixed, full-width bar */
 
 .site-header {
-  background: var(--color-bg);
+  background: var(--color-card);
   border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
   position: fixed;
   top: 0;
   left: 0;
@@ -150,6 +183,12 @@ main {
   display: flex;
   list-style: none;
   gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0;
 }
 
 .nav-links a {
@@ -166,7 +205,7 @@ main {
 }
 
 .nav-links a[aria-current="page"] {
-  color: var(--color-heading);
+  color: var(--color-accent);
   font-weight: 600;
 }
 
@@ -203,7 +242,23 @@ main {
   max-width: none;
 }
 
-h1, h2, h3, h4, h5, h6, .page-title, .section-title {
+/* First element in content sits flush with the top — no dead gap,
+   and aligns with the TOC sidebar heading */
+.page-content > :first-child {
+  margin-top: 0;
+}
+
+/* ONE focused column for every page. The container (--content-width) is the
+   single source of width and is centered, so the empty space on a wide monitor
+   splits evenly on both sides (balanced) and every page is identical width and
+   alignment. Content fills the column edge-to-edge — no per-element cap, so there
+   is no asymmetric right-side gap. The tagline keeps its own narrower pull-quote. */
+.page,
+.post {
+  max-width: none;
+}
+
+h1, h2, h3, h4, h5, h6, .page-title {
   scroll-margin-top: calc(var(--header-height) + 16px);
 }
 
@@ -216,7 +271,7 @@ h1, h2, h3, h4, h5, h6, .page-title, .section-title {
 .content-grid {
   display: flex;
   align-items: flex-start;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .content-grid > .page-content {
@@ -228,7 +283,7 @@ h1, h2, h3, h4, h5, h6, .page-title, .section-title {
 .toc-sidebar {
   position: sticky;
   top: calc(var(--header-height) + 24px);
-  width: 200px;
+  width: 170px;
   flex-shrink: 0;
 }
 
@@ -301,10 +356,6 @@ ul, ol {
 li {
   margin-bottom: 0.5em;
   line-height: 1.65;
-  text-align: justify;
-  text-align-last: left;
-  -webkit-hyphens: auto;
-  hyphens: auto;
 }
 
 /* Homepage: profile */
@@ -322,6 +373,8 @@ li {
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  border: 3px solid var(--color-card);
+  box-shadow: 0 0 0 1px var(--color-border), var(--shadow-card);
 }
 
 .profile-info h1 {
@@ -345,14 +398,38 @@ li {
   margin-right: 0.5rem;
 }
 
-.home-bio {
-  max-width: none;
-}
 
 @media (max-width: 480px) {
   .profile { flex-direction: column; align-items: center; text-align: center; }
   .profile-info .links a { margin: 0 0.25rem; }
   .profile-photo { width: 100px; height: 100px; }
+}
+
+/* Homepage: positioning hook — the line a recruiter reads first */
+
+.tagline {
+  font-size: var(--text-xl);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-heading);
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-accent-soft);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Home call-to-action row — primary action a recruiter can act on immediately. */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .tagline { font-size: var(--text-lg); max-width: none; }
 }
 
 /* Homepage: sections */
@@ -369,20 +446,34 @@ li {
   color: var(--color-heading);
 }
 
-/* Work items — two-column grid on wide screens */
+/* Work items — card grid that fills the full editorial frame width */
 
 .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 @media (max-width: 700px) {
-  .work-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .work-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
 
+/* Cards (Miller's Law — chunk projects into scannable blocks). The hover lift
+   signals interactivity and gives the grid depth against the off-white page. */
 .work-item {
   margin-bottom: 0;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.work-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-strong);
 }
 
 .work-item h3 {
@@ -411,49 +502,11 @@ hr {
   margin: 2.5rem 0;
 }
 
-/* Inner pages: experience/project items */
-
-.experience-entry {
-  margin-bottom: 2.5rem;
-}
-
-.experience-entry h3 {
-  font-size: var(--text-xl);
-  margin-top: 0;
-  margin-bottom: 0.2em;
-}
-
-.experience-entry .company {
-  font-weight: 600;
-  color: var(--color-heading);
-}
-
-.experience-entry .period {
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-  margin-bottom: 0.75em;
-}
-
-.project-entry {
-  margin-bottom: 2rem;
-}
-
-.project-entry h3 {
-  font-size: var(--text-lg);
-  margin-top: 0;
-  margin-bottom: 0.15em;
-}
-
-.project-entry .stack {
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-  margin-bottom: 0.5em;
-}
 
 /* CV page */
 
 .cv-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--color-border);
@@ -474,7 +527,7 @@ hr {
 .cv-download { margin-top: 1rem; }
 
 .cv-footer {
-  text-align: center;
+  text-align: left;
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--color-border);
@@ -482,25 +535,80 @@ hr {
   font-size: var(--text-sm);
 }
 
+/* Skills — scannable label/value rows (a recruiter reads these in seconds) */
+
+.skills {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.55rem 1.5rem;
+  margin: 0 0 1.2em;
+}
+
+.skills dt {
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.skills dd {
+  margin: 0;
+  color: var(--color-text);
+}
+
+@media (max-width: 560px) {
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .skills dt { margin-top: 0.7rem; }
+  .skills dt:first-child { margin-top: 0; }
+  .skills dd { margin: 0.1rem 0 0; }
+}
+
 /* Buttons */
 
+/* Primary CTA (Fitts's Law — large, high-contrast target with generous padding,
+   set apart from competing links). Filled deep teal, white text 7.6:1 (AAA). */
 .btn {
-  display: inline-block;
-  padding: 0.5em 1.25em;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-link);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7em 1.6em;
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  background: var(--color-cta);
+  border: 1px solid var(--color-cta);
+  border-radius: 8px;
   text-decoration: none;
-  background: transparent;
   cursor: pointer;
-  transition: border-color 0.15s;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .btn:hover {
-  border-color: var(--color-link);
+  background: var(--color-cta-hover);
+  border-color: var(--color-cta-hover);
+  color: #fff;
   text-decoration: none;
+  box-shadow: var(--shadow-card);
+  transform: translateY(-1px);
+}
+
+/* Secondary CTA — outline, so it supports the primary teal without competing
+   (teal text on off-white is 7.6:1, AAA). */
+.btn-secondary {
+  color: var(--color-cta);
+  background: transparent;
+  border-color: var(--color-border-strong);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background: var(--color-cta);
+  border-color: var(--color-cta);
 }
 
 /* Tables */
@@ -532,7 +640,6 @@ img {
 
 /* Utilities */
 
-.text-center { text-align: center; }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -545,6 +652,23 @@ img {
   border-width: 0;
 }
 
+/* Skip link: hidden until focused by keyboard, then revealed top-left */
+.sr-only:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  clip: auto;
+  background: var(--color-bg);
+  color: var(--color-link);
+  border: 1px solid var(--color-link);
+  border-radius: 4px;
+  z-index: 1100;
+}
+
 *:focus-visible {
   outline: 2px solid var(--color-link);
   outline-offset: 2px;
@@ -552,7 +676,7 @@ img {
 
 /* Blog */
 
-.post-list { margin-top: 1rem; }
+.post-list { margin-top: 1rem; max-width: var(--reading-width); }
 
 .post-item {
   margin-bottom: 0.75rem;
@@ -569,6 +693,24 @@ img {
 .post-desc {
   color: var(--color-muted);
   font-size: var(--text-sm);
+}
+
+/* Back link — sits above the title on posts (Anthropic "Back to Overview"). */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin-bottom: 1.5rem;
+  padding: 0.3rem 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--color-link);
+  text-decoration: none;
 }
 
 .post-header { margin-bottom: 2rem; }
@@ -620,27 +762,23 @@ img {
   margin-bottom: 0.5em;
 }
 
-/* Calendar embed — clips iframe header, shows date/time picker directly */
+/* Calendar embed — rendered inline as part of the page, no container chrome */
 
 .calendar-embed {
   margin-top: 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  overflow: hidden;
 }
 
 .calendar-embed iframe {
   display: block;
   width: 100%;
-  height: 900px;
-  margin-top: -320px;
+  height: 800px;
   border: 0;
+  overflow: hidden;
 }
 
 @media (max-width: 640px) {
   .calendar-embed iframe {
-    height: 850px;
-    margin-top: -390px;
+    height: 1400px;
   }
 }
 

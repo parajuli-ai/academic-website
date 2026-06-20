@@ -22,13 +22,20 @@ title: Home
   </div>
 </div>
 
+<p class="tagline">I design production AI systems for decisions that have to be right: autonomous LLM pipelines and the evaluation that keeps them honest.</p>
+
+<p class="cta-row">
+  <a href="{{ '/assets/tilak-parajuli-cv.pdf' | relative_url }}" class="btn" target="_blank" rel="noopener">Download CV (PDF)</a>
+  <a href="{{ '/contact/' | relative_url }}" class="btn btn-secondary">Get in touch</a>
+</p>
+
 <div class="home-bio" markdown="1">
 
-I build production AI systems: multi-agent pipelines, RAG, LLM fine-tuning, and vector search, deployed on AWS with Docker. Currently a Data Scientist at Climate Clean Solutions, automating property tax valuation with autonomous LLM pipelines.
+I work where applied LLMs meet real consequences. My focus is multi-agent pipelines, retrieval-augmented generation, and fine-tuned models, deployed on AWS. As a Data Scientist at Climate Clean Solutions, I build autonomous systems that contest property-tax valuations end-to-end, enforcing measurable reduction thresholds across thousands of parcels.
 
-Previously an AI/ML Research Fellow at Fusemachines, where I shipped gaze detection, model evaluation tools, and agentic AI prototypes. Before that, a research intern at NAAMII in computational biology under Dr. Taman Upadhaya (Cedars-Sinai).
+Previously, as an AI/ML Research Fellow at Fusemachines, I shipped real-time gaze detection into a live proctoring product and built the model-evaluation tooling teams relied on across their forecasting systems. Earlier, at NAAMII, I worked on computational biology for radiation oncology under Dr. Taman Upadhaya (Cedars-Sinai).
 
-B.Sc. Computer Science, Tribhuvan University.
+B.Sc. in Computer Science, Tribhuvan University.
 
 </div>
 

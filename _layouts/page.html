@@ -4,9 +4,11 @@ layout: default
 
 <article class="page">
     {% if page.toc == false %}
+    {% unless page.hide_title %}
     <header class="page-header">
         <h1 class="page-title">{{ page.title }}</h1>
     </header>
+    {% endunless %}
     <div class="page-content">
         {{ content }}
     </div>

@@ -11,32 +11,32 @@ toc: true
 **Climate Clean Solutions & LowPropTax**
 *Jan 2026 to Present · California, USA / Kathmandu, Nepal (Hybrid)*
 
-- Architected a multi-agent LLM pipeline for property-tax appeals (RAG + API-driven comparable retrieval) that automates valuation end-to-end.
-- Designed valuation models over physical, neighborhood, and climate signals with automated QA, enforcing >10% reduction thresholds.
-- Built real-time data pipelines on AWS S3 + Parquet (air-quality metrics: PM2.5, NO2, O3, CO2) with dimensional modeling.
-- Automated reporting via Power BI dashboards for time-series, anomaly detection, and geospatial insights.
+- Architected an autonomous multi-agent LLM pipeline that automates property-tax valuation end-to-end, combining RAG with API-driven comparable retrieval.
+- Designed valuation models over physical, neighborhood, and climate signals, with automated QA gates that enforce >10% reduction thresholds before an appeal is filed.
+- Engineered real-time data pipelines on AWS (S3 + Parquet) for air-quality signals such as PM2.5, NO₂, O₃, and CO₂, with dimensional modeling for downstream analytics.
+- Automated time-series, anomaly-detection, and geospatial reporting in Power BI, replacing manual reporting cycles.
 
 ### AI/ML Research Fellow
 **Fusemachines Nepal**
 *June 2025 to Sept 2025 · Kathmandu, Nepal*
 
-- Built an automated model-evaluation pipeline (MAE, RMSE, MAPE, SMAPE) with visual reports, deployed across forecasting models.
-- Shipped real-time gaze detection in a proctoring product using MediaPipe FaceMesh + React.
-- Prototyped agentic AI workflows; evaluated and fine-tuned vision-language models (CLIP, BLIP, PaliGemma 2).
+- Built an automated model-evaluation framework (MAE, RMSE, MAPE, SMAPE) with visual reporting, adopted across the team's forecasting models.
+- Shipped real-time gaze detection into a live proctoring product (MediaPipe FaceMesh + React).
+- Prototyped agentic workflows and fine-tuned vision-language models (CLIP, BLIP, PaliGemma 2) for evaluation.
 
 ### RPA Developer
 **Quickfox Consulting**
 *Feb 2025 to May 2025 · Kathmandu, Nepal*
 
-- Built RPA bots automating data entry, form submission, web scraping, and Excel consolidation.
-- Led an LLM-powered data-cleaning pipeline for legacy medical databases.
+- Automated data entry, form submission, web scraping, and Excel consolidation with production RPA bots, eliminating repetitive manual workflows.
+- Led an LLM-powered data-cleaning pipeline that restored integrity to legacy medical databases.
 
 ### AI Research Intern
 **NAAMII**
 *June 2024 to Sept 2024 · Kathmandu, Nepal*
 
-- Analyzed clinical and radiomics data for a radiation oncology project under Dr. Taman Upadhaya (Cedars-Sinai).
-- Applied permutation tests, ROC AUC, and correlation analysis for biomarker signal discovery.
+- Analyzed clinical and radiomics data for a radiation-oncology study under Dr. Taman Upadhaya (Cedars-Sinai).
+- Applied permutation testing, ROC-AUC, and correlation analysis to surface candidate biomarker signals.
 
 ## Projects
 
