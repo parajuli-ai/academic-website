@@ -21,13 +21,13 @@ A short time later, NVIDIA, which co-developed PRAGMA, acquired Kumo, the compan
 
 For roughly a decade, production financial machine learning has followed one pattern: a separate supervised model for each task. A gradient boosted tree for credit risk, another for fraud, another for churn, each with its own feature pipeline, its own SQL, and its own validation. Adding a use case or entering a market means repeating the cycle. The KumoRFM-2 authors quantify the human cost plainly: building the task specific features for a single relational prediction, the current gold standard, requires an expert data scientist and hours to days of work per task (Hudovernik et al., [2026](https://arxiv.org/abs/2604.12596)).
 
-There is also a deeper limit. Hand built features are fixed, task agnostic aggregations, and a fixed aggregation cannot express a signal that depends on how rows relate to each other. The KumoRFM-2 paper gives a clean illustration. Suppose a parent table is labelled positive exactly when two binary attributes, $A$ and $B$, co-occur in at least one related child row. A column wise aggregation that summarises $A$ and $B$ separately sees identical marginals in the positive and negative classes and cannot separate them at all, scoring an area under the ROC curve of $0.5$; a model that aligns rows before aggregating reaches $1.0$ (Hudovernik et al., [2026](https://arxiv.org/abs/2604.12596)). The point generalises: compressing a customer's world into a flat row discards exactly the cross row structure that many tasks depend on.
+There is also a deeper limit. Hand built features are fixed, task agnostic aggregations, and a fixed aggregation cannot express a signal that depends on how rows relate to each other. The KumoRFM-2 paper gives a clean illustration. Suppose a parent table is labelled positive exactly when two binary attributes, $$A$$ and $$B$$, co-occur in at least one related child row. A column wise aggregation that summarises $$A$$ and $$B$$ separately sees identical marginals in the positive and negative classes and cannot separate them at all, scoring an area under the ROC curve of $$0.5$$; a model that aligns rows before aggregating reaches $$1.0$$ (Hudovernik et al., [2026](https://arxiv.org/abs/2604.12596)). The point generalises: compressing a customer's world into a flat row discards exactly the cross row structure that many tasks depend on.
 
 This is the limit that representation learning removed in language and vision, and the foundation model recipe is the same in finance. Pre-train one model on broad raw data with a self supervised objective, obtain a general representation, then adapt it cheaply to many tasks (Bommasani et al., [2021](https://arxiv.org/abs/2108.07258)). Formally, pre-training minimises a loss that needs no labels,
 
 $$\theta^\star = \arg\min_{\theta} \mathbb{E}_{x \sim \mathcal{D}}\big[\mathcal{L}_{\mathrm{ssl}}(f_\theta, x)\big],$$
 
-where $f_\theta$ is the model, $\mathcal{D}$ is the data distribution, and $\mathcal{L}_{\mathrm{ssl}}$ is a pretext objective such as reconstructing masked inputs or predicting the next token. Adaptation then fits a small task head $g_\psi$ on the learned representation $f_{\theta^\star}(x)$ using a comparatively small labelled set. One model is learned once and reused many times.
+where $$f_\theta$$ is the model, $$\mathcal{D}$$ is the data distribution, and $$\mathcal{L}_{\mathrm{ssl}}$$ is a pretext objective such as reconstructing masked inputs or predicting the next token. Adaptation then fits a small task head $$g_\psi$$ on the learned representation $$f_{\theta^\star}(x)$$ using a comparatively small labelled set. One model is learned once and reused many times.
 
 Finance, however, has structure that text does not, and there are two natural ways to encode it. The first treats each customer as an ordered stream of events, a sequence. The second treats the whole institution as interconnected tables, a graph. That single decision, the inductive bias, is what separates the two models in this post. Figure 1 places the two pipelines side by side.
 
@@ -43,29 +43,29 @@ PRAGMA is a family of encoder only Transformers, pre-trained with masked modelli
 
 A financial event is not a sentence. It is a short record of mixed types: a transaction type, an amount, a merchant category, a channel, a free text note, and a timestamp. Serialising that as plain text inflates the sequence and, more damagingly, splits numbers into digit fragments that lose magnitude and order. PRAGMA instead decomposes each datum into a semantic type (the key), a value, and a temporal coordinate, an approach established by earlier transaction models.
 
-Keys form a small vocabulary, on the order of sixty tokens, one per field type. Values are encoded by type: numeric values are mapped to learned percentile buckets, with one token per bucket and a dedicated bucket for zero, which preserves magnitude and order; low cardinality strings become a single categorical token; free text is split with a sub word tokeniser. The value vocabulary is roughly twenty eight thousand tokens. Time is encoded twice. The elapsed time $t$ in seconds since the most recent event is compressed with a soft logarithmic transform,
+Keys form a small vocabulary, on the order of sixty tokens, one per field type. Values are encoded by type: numeric values are mapped to learned percentile buckets, with one token per bucket and a dedicated bucket for zero, which preserves magnitude and order; low cardinality strings become a single categorical token; free text is split with a sub word tokeniser. The value vocabulary is roughly twenty eight thousand tokens. Time is encoded twice. The elapsed time $$t$$ in seconds since the most recent event is compressed with a soft logarithmic transform,
 
 $$\tau(t) = 8\ln\left(1 + t/8\right),$$
 
-which keeps fine resolution for recent events while compressing decade old history, and calendar structure is added through fixed period sinusoids of the hour, day of week, and day of month, for example $\big(\sin(2\pi h / 24), \cos(2\pi h / 24)\big)$ for the hour $h$. Each key and value pair is embedded from a shared table $E$ and summed, then given a within field position code,
+which keeps fine resolution for recent events while compressing decade old history, and calendar structure is added through fixed period sinusoids of the hour, day of week, and day of month, for example $$\big(\sin(2\pi h / 24), \cos(2\pi h / 24)\big)$$ for the hour $$h$$. Each key and value pair is embedded from a shared table $$E$$ and summed, then given a within field position code,
 
 $$x = \mathrm{PosEmb}\big(E(k) + E(v)\big), \qquad x \in \mathbb{R}^{n \times d},$$
 
-where $d$ is the embedding dimension. A learnable summary token is prepended to each sequence.
+where $$d$$ is the embedding dimension. A learnable summary token is prepended to each sequence.
 
 ### 3.2 A hierarchy of three Transformers
 
-PRAGMA is not one Transformer but three, composed in a hierarchy. The primitive is standard self attention (Vaswani et al., [2017](https://arxiv.org/abs/1706.03762)): for an input packed as rows of a matrix $X$, the model forms queries, keys, and values $Q = XW_Q$, $K = XW_K$, $V = XW_V$ and computes
+PRAGMA is not one Transformer but three, composed in a hierarchy. The primitive is standard self attention (Vaswani et al., [2017](https://arxiv.org/abs/1706.03762)): for an input packed as rows of a matrix $$X$$, the model forms queries, keys, and values $$Q = XW_Q$$, $$K = XW_K$$, $$V = XW_V$$ and computes
 
 $$\mathrm{Attention}(Q, K, V) = \mathrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V,$$
 
-with $d_k$ the key dimension, and multi head attention runs several such maps in parallel. Every block in PRAGMA is bidirectional, which suits discriminative tasks where the full history is available at prediction time. The three blocks are a profile state encoder, which compresses static per user context such as plan tier and account age, together with timestamped milestones, into a single summary vector $z_a$; an event encoder, which encodes each event independently into a per event vector and then adds the calendar features; and a history encoder, which concatenates the profile vector with the event vectors and contextualises them with a final bidirectional Transformer. The history encoder output $z_h$ is the record level representation used downstream. Temporal coordinates enter the encoders through rotary position embeddings (Su et al., [2024](https://arxiv.org/abs/2104.09864)), which rotate each query and key by an angle proportional to position so that attention depends on relative time. The detail to keep in mind is that the event encoder processes events independently, with no attention between events; this choice is efficient, and it is also the origin of the model's relational limitation.
+with $$d_k$$ the key dimension, and multi head attention runs several such maps in parallel. Every block in PRAGMA is bidirectional, which suits discriminative tasks where the full history is available at prediction time. The three blocks are a profile state encoder, which compresses static per user context such as plan tier and account age, together with timestamped milestones, into a single summary vector $$z_a$$; an event encoder, which encodes each event independently into a per event vector and then adds the calendar features; and a history encoder, which concatenates the profile vector with the event vectors and contextualises them with a final bidirectional Transformer. The history encoder output $$z_h$$ is the record level representation used downstream. Temporal coordinates enter the encoders through rotary position embeddings (Su et al., [2024](https://arxiv.org/abs/2104.09864)), which rotate each query and key by an angle proportional to position so that attention depends on relative time. The detail to keep in mind is that the event encoder processes events independently, with no attention between events; this choice is efficient, and it is also the origin of the model's relational limitation.
 
 The family scales by widening and deepening all three blocks together: a small model at 10 million parameters, a medium model at 100 million, and a large model at 1 billion. To my knowledge it is the largest published encoder backbone for consumer banking events.
 
 ### 3.3 The pre-training objective
 
-PRAGMA is trained by masked modelling. With $M$ the set of masked positions in a record $x$, the model maximises the likelihood of the originals given the rest,
+PRAGMA is trained by masked modelling. With $$M$$ the set of masked positions in a record $$x$$, the model maximises the likelihood of the originals given the rest,
 
 $$\mathcal{L}_{\mathrm{MLM}} = -\mathbb{E}_{x \sim \mathcal{D}} \sum_{i \in M} \log p_\theta\big(x_i \mid x_{\setminus M}\big).$$
 
@@ -73,17 +73,17 @@ Masking happens at three scales: individual tokens, whole events, and whole keys
 
 ### 3.4 Adaptation and systems
 
-Two adaptation modes are reported. In the probe setting the backbone is frozen, the representation $z_h$ is extracted, and a linear or logistic probe is fit, which is fast enough to iterate in minutes. In the LoRA setting (Hu et al., [2022](https://arxiv.org/abs/2106.09685)), only low rank updates to the attention and feed forward projections are trained, a small fraction of parameters, leaving the shared backbone intact.
+Two adaptation modes are reported. In the probe setting the backbone is frozen, the representation $$z_h$$ is extracted, and a linear or logistic probe is fit, which is fast enough to iterate in minutes. In the LoRA setting (Hu et al., [2022](https://arxiv.org/abs/2106.09685)), only low rank updates to the attention and feed forward projections are trained, a small fraction of parameters, leaving the shared backbone intact.
 
 On systems, the paper reports pre-training on 16 to 32 H100 GPUs depending on model size, in bf16, with the small model converging in about two days and the larger two in about two weeks each. Revolut's infrastructure account describes a dedicated 64 GPU cluster for PRAGMA and notes that Revolut's total artificial intelligence footprint exceeds 200 H100 GPUs on its cloud provider (Nebius, [2026](https://nebius.com/customer-stories/revolut)); the figure of two hundred or more GPUs that circulates therefore describes the whole estate, not the PRAGMA training run. Efficiency comes from packing variable length events with a fused attention kernel (Dao et al., [2022](https://arxiv.org/abs/2205.14135)) and from aggressive truncation, with very long histories subsampled to the most recent events.
 
 ### 3.5 Results, and the metric caveat
 
-PRAGMA reports only relative improvements, the relative change $(x / \text{baseline} - 1)$ reported as a percentage, because absolute metrics are commercially sensitive. Against task specific baselines, the large model with LoRA improves credit scoring by 130.2% in PR-AUC and 12.4% in ROC-AUC; communication engagement by 79.4% and 20.4%; external fraud by 16.7% in precision and 64.7% in recall; product recommendation by 40.5% in mean average precision; recurrent transaction detection by 5.8% in F1; and lifetime value by 1.8% in PR-AUC and 2.6% in ROC-AUC (Ostroukhov et al., [2026](https://arxiv.org/abs/2604.08649)). These are offline backtests on internal datasets, a point the peer review section returns to.
+PRAGMA reports only relative improvements, the relative change $$(x / \text{baseline} - 1)$$ reported as a percentage, because absolute metrics are commercially sensitive. Against task specific baselines, the large model with LoRA improves credit scoring by 130.2% in PR-AUC and 12.4% in ROC-AUC; communication engagement by 79.4% and 20.4%; external fraud by 16.7% in precision and 64.7% in recall; product recommendation by 40.5% in mean average precision; recurrent transaction detection by 5.8% in F1; and lifetime value by 1.8% in PR-AUC and 2.6% in ROC-AUC (Ostroukhov et al., [2026](https://arxiv.org/abs/2604.08649)). These are offline backtests on internal datasets, a point the peer review section returns to.
 
 ### 3.6 The AML result
 
-Anti-money-laundering is the exception. Treated as a binary classification task, it is the one place the model underperforms its production baseline, by 47.1% in $F_{0.5}$, the precision weighted F measure,
+Anti-money-laundering is the exception. Treated as a binary classification task, it is the one place the model underperforms its production baseline, by 47.1% in $$F_{0.5}$$, the precision weighted F measure,
 
 $$F_\beta = (1 + \beta^2)\frac{P \cdot R}{\beta^2 P + R}, \qquad \beta = 0.5,$$
 
@@ -101,7 +101,7 @@ KumoRFM begins from the opposite premise: the most valuable enterprise data is a
 
 ### 4.1 A relational database as a temporal graph
 
-The construction comes from Relational Deep Learning (Fey et al., [2024](https://relbench.stanford.edu)) and is lossless. Each table becomes a node type, each row a node, each primary to foreign key link an edge, and each record's timestamp orders the graph in time. The result is a temporal heterogeneous graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ in which every node $v$ carries a type, its column values, and a time $t_v$, so that one can form a time consistent snapshot $\mathcal{G}^{\le t}$ containing only records available up to time $t$. A money laundering ring is now a concrete substructure in $\mathcal{G}$, the funnel of Figure 2.
+The construction comes from Relational Deep Learning (Fey et al., [2024](https://relbench.stanford.edu)) and is lossless. Each table becomes a node type, each row a node, each primary to foreign key link an edge, and each record's timestamp orders the graph in time. The result is a temporal heterogeneous graph $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$ in which every node $$v$$ carries a type, its column values, and a time $$t_v$$, so that one can form a time consistent snapshot $$\mathcal{G}^{\le t}$$ containing only records available up to time $$t$$. A money laundering ring is now a concrete substructure in $$\mathcal{G}$$, the funnel of Figure 2.
 
 ### 4.2 Message passing, and how KumoRFM differs from it
 
@@ -109,13 +109,13 @@ The standard way to learn on this graph is message passing, in which a node's re
 
 $$h_v^{(\ell+1)} = \phi^{(\ell)}\Big(h_v^{(\ell)}, \bigoplus_{u \in \mathcal{N}(v)} \psi^{(\ell)}\big(h_v^{(\ell)}, h_u^{(\ell)}, e_{uv}\big)\Big),$$
 
-where $h_v^{(\ell)}$ is node $v$'s embedding at layer $\ell$, $\mathcal{N}(v)$ its neighbours, $\psi$ a message function, $\bigoplus$ a permutation invariant aggregator, $\phi$ an update, and $e_{uv}$ the edge features. Stacking $L$ layers lets information travel $L$ hops, so a signal can flow from a flagged account through an intermediary to the customer under assessment. The supervised relational baselines, such as GraphSAGE (Hamilton et al., [2017](https://arxiv.org/abs/1706.02216)), work this way. PRAGMA's event encoder, by contrast, deliberately allows no message passing between events, which is precisely the capability AML needs.
+where $$h_v^{(\ell)}$$ is node $$v$$'s embedding at layer $$\ell$$, $$\mathcal{N}(v)$$ its neighbours, $$\psi$$ a message function, $$\bigoplus$$ a permutation invariant aggregator, $$\phi$$ an update, and $$e_{uv}$$ the edge features. Stacking $$L$$ layers lets information travel $$L$$ hops, so a signal can flow from a flagged account through an intermediary to the customer under assessment. The supervised relational baselines, such as GraphSAGE (Hamilton et al., [2017](https://arxiv.org/abs/1706.02216)), work this way. PRAGMA's event encoder, by contrast, deliberately allows no message passing between events, which is precisely the capability AML needs.
 
-KumoRFM is not a supervised message passing network. It is a relational foundation model that predicts by in-context learning, the mechanism behind few-shot prediction in large language models (Brown et al., [2020](https://arxiv.org/abs/2005.14165)), adapted to structured data. Given a target node $v_n$ at a future time $t_n$, the model predicts
+KumoRFM is not a supervised message passing network. It is a relational foundation model that predicts by in-context learning, the mechanism behind few-shot prediction in large language models (Brown et al., [2020](https://arxiv.org/abs/2005.14165)), adapted to structured data. Given a target node $$v_n$$ at a future time $$t_n$$, the model predicts
 
 $$\hat{y}_n = \mathrm{RFM}_{\theta}\Big(\mathcal{G}^{\le t_n}[v_n], \big\lbrace \big(\mathcal{G}^{\le t_i}[v_i], y_i\big)\big\rbrace_{i=1}^{n-1}\Big),$$
 
-where $\mathcal{G}^{\le t}[v]$ is the entity centred subgraph around $v$ using only records up to time $t$, the set in braces is a context of labelled examples constructed from the database's own history, and the parameters $\theta$ stay frozen (Hudovernik et al., [2026](https://arxiv.org/abs/2604.12596)). No gradient step is taken at prediction time; the model must reason over the supplied subgraphs.
+where $$\mathcal{G}^{\le t}[v]$$ is the entity centred subgraph around $$v$$ using only records up to time $$t$$, the set in braces is a context of labelled examples constructed from the database's own history, and the parameters $$\theta$$ stay frozen (Hudovernik et al., [2026](https://arxiv.org/abs/2604.12596)). No gradient step is taken at prediction time; the model must reason over the supplied subgraphs.
 
 ### 4.3 The KumoRFM-2 architecture, stated precisely
 
@@ -176,7 +176,7 @@ The open problem can be stated directly. As of June 2026, no published model com
 
 ### 7.1 What the architecture would need to do
 
-Concretely, such a model would compose the two paradigms rather than choose between them. For each entity $e$, a user, an account, or a merchant, with event history $H_e$, a sequence encoder would summarise its behaviour over time,
+Concretely, such a model would compose the two paradigms rather than choose between them. For each entity $$e$$, a user, an account, or a merchant, with event history $$H_e$$, a sequence encoder would summarise its behaviour over time,
 
 $$s_e = \mathrm{SeqEnc}_\theta(H_e) \in \mathbb{R}^d,$$
 
@@ -188,11 +188,11 @@ respecting the temporal constraint that a node attends only to its past. A fusio
 
 $$z_e = \mathrm{softmax}\left(\frac{(W_Q s_e)(W_K g_e)^\top}{\sqrt{d}}\right)(W_V g_e),$$
 
-so the joint representation $z_e$ can weigh what a customer did, in order, against who the customer is connected to. Pre-training would need an objective that supervises both halves at once,
+so the joint representation $$z_e$$ can weigh what a customer did, in order, against who the customer is connected to. Pre-training would need an objective that supervises both halves at once,
 
 $$\mathcal{L} = \mathcal{L}_{\mathrm{MLM}}(\theta) + \lambda \mathcal{L}_{\mathrm{graph}}(\phi),$$
 
-where the first term is masked event reconstruction, as in PRAGMA, the second is a relational objective such as link prediction or node classification, as in relational deep learning, and $\lambda$ balances them.
+where the first term is masked event reconstruction, as in PRAGMA, the second is a relational objective such as link prediction or node classification, as in relational deep learning, and $$\lambda$$ balances them.
 
 ### 7.2 Open questions
 
