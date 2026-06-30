@@ -1,4 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://tilakparajuli.name.np/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tilakparajuli.name.np/" rel="alternate" type="text/html" /><updated>2026-06-30T13:05:38+00:00</updated><id>https://tilakparajuli.name.np/feed.xml</id><title type="html">Tilak Parajuli | AI/ML Engineer</title><subtitle>I build production AI systems: multi-agent pipelines, RAG, and LLM fine-tuning. Data Scientist at Climate Clean Solutions.</subtitle><author><name>Tilak Parajuli</name><email>tilak.parajuli.58@gmail.com</email></author><entry><title type="html">PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs</title><link href="https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/" rel="alternate" type="text/html" title="PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs" /><published>2026-06-30T00:00:00+00:00</published><updated>2026-06-30T00:00:00+00:00</updated><id>https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models</id><content type="html" xml:base="https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/"><![CDATA[<h2 id="1-motivation">1. Motivation</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="bSyJzKMpJ-BN9cut8vVKg0BYP34RzY-SA3XZsm7jCX0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs | Tilak Parajuli | AI/ML Engineer</title>
+
+    <meta name="description" content="Revolut's PRAGMA models a customer as a sequence of events. Kumo's KumoRFM models an enterprise as a graph of entities. Neither alone detects money laundering well. This post explains the architectural reason, and why NVIDIA paid a reported US$400M to own both sides of the gap.">
+    <meta name="author" content="Tilak Parajuli">
+
+    <!-- Security: meta-tag-enforceable subset for GitHub Pages -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   script-src 'self' 'unsafe-inline' https://calendar.google.com https://*.disqus.com https://*.disquscdn.com;
+                   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://calendar.google.com;
+                   font-src 'self' https://fonts.gstatic.com;
+                   img-src 'self' https: data:;
+                   connect-src 'self' https:;
+                   frame-src 'self' https://calendar.google.com https://disqus.com https://*.disqus.com;
+                   frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs | Tilak Parajuli | AI/ML Engineer">
+    <meta property="og:description" content="Revolut's PRAGMA models a customer as a sequence of events. Kumo's KumoRFM models an enterprise as a graph of entities. Neither alone detects money laundering well. This post explains the architectural reason, and why NVIDIA paid a reported US$400M to own both sides of the gap.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/">
+    <meta property="og:image" content="https://tilakparajuli.name.np/assets/images/profile.jpg">
+    <meta property="og:site_name" content="Tilak Parajuli">
+    <meta property="og:locale" content="en_US">
+    <meta property="profile:first_name" content="Tilak">
+    <meta property="profile:last_name" content="Parajuli">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs | Tilak Parajuli | AI/ML Engineer">
+    <meta name="twitter:description" content="Revolut's PRAGMA models a customer as a sequence of events. Kumo's KumoRFM models an enterprise as a graph of entities. Neither alone detects money laundering well. This post explains the architectural reason, and why NVIDIA paid a reported US$400M to own both sides of the gap.">
+    <meta name="twitter:image" content="https://tilakparajuli.name.np/assets/images/profile.jpg">
+
+    <!-- JSON-LD Structured Data (Pillar 1) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Tilak Parajuli",
+        "givenName": "Tilak",
+        "familyName": "Parajuli",
+        "jobTitle": "AI/ML Engineer",
+        "description": "I build production AI systems: multi-agent pipelines, RAG, and LLM fine-tuning. Data Scientist at Climate Clean Solutions.",
+        "url": "https://tilakparajuli.name.np/",
+        "image": "https://tilakparajuli.name.np/assets/images/profile.jpg",
+        "email": "mailto:tilak.parajuli.58@gmail.com",
+        "sameAs": [
+          "https://orcid.org/0009-0007-1545-8400",
+          "https://scholar.google.com/citations?user=WAKS2J4AAAAJ",
+          "https://github.com/parajulitilak",
+          "https://www.linkedin.com/in/tilak-parajuli-777411179"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Tribhuvan University",
+          "department": "Bhaktapur Multiple Campus",
+          "url": "https://tu.edu.np/"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "Bachelor of Science in Computer Science and Information Technology",
+            "recognizedBy": {
+              "@type": "EducationalOrganization",
+              "name": "Tribhuvan University"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "AI Fellow, Microdegree in Artificial Intelligence",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Fusemachines"
+            }
+          }
+        ],
+        "knowsAbout": [
+          "Large Language Models",
+          "Retrieval-Augmented Generation",
+          "Multi-Agent Systems",
+          "Computational Biology",
+          "Computer Vision",
+          "Data Engineering"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Climate Clean Solutions & LowPropTax"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kathmandu",
+          "addressCountry": "NP"
+        }
+      }
+    }
+    </script>
+
+    <!-- WebSite schema: tells Google the site name to show in results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tilak Parajuli",
+      "url": "https://tilakparajuli.name.np/"
+    }
+    </script>
+
+    <!-- SEO (jekyll-seo-tag) -->
+    <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs | Tilak Parajuli AI/ML Engineer</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs" />
+<meta name="author" content="Tilak Parajuli" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Revolut’s PRAGMA models a customer as a sequence of events. Kumo’s KumoRFM models an enterprise as a graph of entities. Neither alone detects money laundering well. This post explains the architectural reason, and why NVIDIA paid a reported US$400M to own both sides of the gap." />
+<meta name="twitter:description" property="og:description" content="Revolut’s PRAGMA models a customer as a sequence of events. Kumo’s KumoRFM models an enterprise as a graph of entities. Neither alone detects money laundering well. This post explains the architectural reason, and why NVIDIA paid a reported US$400M to own both sides of the gap." />
+<link rel="canonical" href="https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/" />
+<meta property="og:url" content="https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/" />
+<meta property="og:site_name" content="Tilak Parajuli AI/ML Engineer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-06-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tilak Parajuli"},"dateModified":"2026-06-30T00:00:00+00:00","datePublished":"2026-06-30T00:00:00+00:00","description":"Revolut’s PRAGMA models a customer as a sequence of events. Kumo’s KumoRFM models an enterprise as a graph of entities. Neither alone detects money laundering well. This post explains the architectural reason, and why NVIDIA paid a reported US$400M to own both sides of the gap.","headline":"PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs","mainEntityOfPage":{"@type":"WebPage","@id":"https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/"},"url":"https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Performance: Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts: Inter (body) + JetBrains Mono (code) -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    </noscript>
+
+
+    <!-- CSS (preloaded then applied) -->
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+
+    <!-- RSS Feed -->
+    <link type="application/atom+xml" rel="alternate" href="https://tilakparajuli.name.np/feed.xml" title="Tilak Parajuli | AI/ML Engineer" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/">
+</head>
+<body>
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    
+    <header class="site-header">
+        <nav role="navigation" aria-label="Main navigation">
+    <div class="site-title">
+        <a href="/">Tilak Parajuli</a>
+    </div>
+    
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
+        ☰
+    </button>
+    
+    <ul id="primary-nav" class="nav-links">
+        
+        <li>
+            <a href="/work/" 
+               >
+                Work
+            </a>
+        </li>
+        
+        <li>
+            <a href="/blog/" 
+               >
+                Blog
+            </a>
+        </li>
+        
+        <li>
+            <a href="/cv/" 
+               >
+                CV
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact/" 
+               >
+                Contact
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </header>
+    
+    <main id="main-content" class="container">
+        <article class="post">
+    <a href="/blog/" class="back-link">&larr; Back to Overview</a>
+
+    <header class="post-header">
+        <h1 class="post-title">PRAGMA, KumoRFM, and the Gap Between Them: Why Financial AI Needs Both Sequences and Graphs</h1>
+        <p class="post-meta">
+            <time datetime="2026-06-30T00:00:00+00:00">
+                June 30, 2026
+            </time>
+             · Tilak Parajuli
+        </p>
+    </header>
+
+    <div class="post-content page-content">
+        <h2 id="1-motivation">1. Motivation</h2>
 
 <p>The motivation for this post is a gap between how one recent model is discussed and what its paper actually reports. In the public conversation about foundation models in banking, including posts circulating in my own professional network, PRAGMA tends to appear as a general purpose replacement for task specific financial machine learning, captured by the slogan that a single pre-trained model can be learned once and adapted many times. The paper supports that reading for most tasks. It also records, in Table 9, one task on which the model is clearly worse than the production system it was built to replace: anti-money-laundering (AML). The authors attribute the shortfall to the architecture itself, not to a lack of data or tuning (Ostroukhov et al., <a href="https://arxiv.org/abs/2604.08649">2026</a>).</p>
 
@@ -332,15 +566,62 @@
 
 <hr />
 
-<p><em>Series: Architecture Deep Dives. This post is a public notebook: it maps the landscape and names an open problem, and it makes no claim to have solved that problem. The experiments and the paper come next.</em></p>]]></content><author><name>Tilak Parajuli</name></author><category term="foundation-models" /><category term="financial-ai" /><category term="graph-neural-networks" /><category term="transformers" /><category term="banking" /><summary type="html"><![CDATA[Revolut's PRAGMA models a customer as a sequence of events. Kumo's KumoRFM models an enterprise as a graph of entities. Neither alone detects money laundering well. This post explains the architectural reason, and why NVIDIA paid a reported US$400M to own both sides of the gap.]]></summary></entry><entry><title type="html">Hello World</title><link href="https://tilakparajuli.name.np/2026/06/17/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2026-06-17T00:00:00+00:00</published><updated>2026-06-17T00:00:00+00:00</updated><id>https://tilakparajuli.name.np/2026/06/17/hello-world</id><content type="html" xml:base="https://tilakparajuli.name.np/2026/06/17/hello-world/"><![CDATA[<p>This is my first blog post. I plan to write about AI/ML engineering, building production systems, and research notes.</p>
+<p><em>Series: Architecture Deep Dives. This post is a public notebook: it maps the landscape and names an open problem, and it makes no claim to have solved that problem. The experiments and the paper come next.</em></p>
 
-<p>Topics I’m thinking about:</p>
+    </div>
 
-<ul>
-  <li>Multi-agent architectures and when they actually help</li>
-  <li>RAG pipeline design: retrieval quality vs latency tradeoffs</li>
-  <li>Lessons from shipping ML in production</li>
-  <li>Computational biology and cross-domain ML</li>
-</ul>
+    <nav class="post-navigation">
+        
+        <a href="/2026/06/17/hello-world/" class="prev-post">
+            &larr; Hello World
+        </a>
+        
+        
+    </nav>
 
-<p>More to come.</p>]]></content><author><name>Tilak Parajuli</name></author><summary type="html"><![CDATA[First post. Notes on building AI systems, research, and what I'm learning.]]></summary></entry></feed>
+    
+    <div class="disqus-comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = 'https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/';
+                this.page.identifier = '/2026/06/30/pragma-kumo-financial-foundation-models/';
+            };
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://tilak-parajuli.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Enable JavaScript to view <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    
+</article>
+
+    </main>
+    
+    <footer>
+        <div class="container">
+    <small>
+        &copy; 2026 Tilak Parajuli
+        · <a href="mailto:tilak.parajuli.58@gmail.com">Email</a>
+         · <a href="https://linkedin.com/in/tilak-parajuli" target="_blank" rel="noopener">LinkedIn</a>
+         · <a href="https://github.com/parajulitilak" target="_blank" rel="noopener">GitHub</a>
+    </small>
+</div>
+
+    </footer>
+
+    
+    <a class="fab-contact" href="/contact/" aria-label="Get in touch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>Get in touch</span>
+    </a>
+    
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
