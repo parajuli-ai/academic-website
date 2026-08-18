@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Open external links inside article content in a new tab (internal links stay
 // in the same tab for normal navigation). Covers post/page reference links.
-document.querySelectorAll('.page-content a[href], .post-content a[href]').forEach(function (link) {
+document.querySelectorAll('.page-content a[href], .post-content a[href], .home-bio a[href]').forEach(function (link) {
   if (link.hostname && link.hostname !== window.location.hostname) {
     link.setAttribute('target', '_blank');
   }

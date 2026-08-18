@@ -32,7 +32,7 @@ toc: true
 - Led an LLM-powered data-cleaning pipeline that restored integrity to legacy medical databases.
 
 ### AI Research Intern
-**NAAMII**
+**[NAAMII](https://naamii.org/about/team-and-leadership/tilak_parajuli)**
 *June 2024 to Sept 2024 · Kathmandu, Nepal*
 
 - Analyzed clinical and radiomics data for a radiation-oncology study under Dr. Taman Upadhaya (Cedars-Sinai).

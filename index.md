@@ -32,7 +32,7 @@ title: Home
 
 I work where applied LLMs meet real consequences. My focus is multi-agent pipelines, retrieval-augmented generation, and fine-tuned models, deployed on AWS. As a Data Scientist at Climate Clean Solutions, I build autonomous systems that contest property-tax valuations end-to-end, enforcing measurable reduction thresholds across thousands of parcels.
 
-Previously, as an AI/ML Research Fellow at Fusemachines, I shipped real-time gaze detection into a live proctoring product and built the model-evaluation tooling teams relied on across their forecasting systems. Earlier, at NAAMII, I worked on computational biology for radiation oncology under Dr. Taman Upadhaya (Cedars-Sinai).
+Previously, as an AI/ML Research Fellow at Fusemachines, I shipped real-time gaze detection into a live proctoring product and built the model-evaluation tooling teams relied on across their forecasting systems. Earlier, at [NAAMII](https://naamii.org/about/team-and-leadership/tilak_parajuli), I worked on computational biology for radiation oncology under Dr. Taman Upadhaya (Cedars-Sinai).
 
 B.Sc. in Computer Science, Tribhuvan University.
 

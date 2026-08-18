@@ -32,7 +32,7 @@ AI/ML engineer and data scientist building production systems where correctness 
 **RPA Developer** | Quickfox Consulting
 *Feb 2025 to May 2025 · Kathmandu, Nepal*
 
-**AI Research Intern** | NAAMII
+**AI Research Intern** | [NAAMII](https://naamii.org/about/team-and-leadership/tilak_parajuli)
 *June 2024 to Sept 2024 · Kathmandu, Nepal*
 
 See the [Work]({{ '/work/' | relative_url }}) page for detailed project descriptions and results, or download the full PDF above.
