@@ -2,13 +2,17 @@
   title: "Neither Blinding Nor a Jury, Neither Capability Nor Strategy: What Brings a Verifier to Reliability"
   authors: "J. Kozman, A. Waddepalli, T. Parajuli"
   venue: "NeurIPS 2026 Workshop on Trust-AI-Eval (TAE)"
-  venue_url: "https://tai-eval.github.io/"
+  venue_url: "https://tai-eval.github.io/papers/"
   status: "Accepted"
   note: "extended version under review at ICLR 2027"
   year: 2026
   summary: "Across 64,800 controlled verifications, a model approves its own wrong answers 11.9 percentage points more often than other models do, and telling it who wrote the answer changes almost nothing. Only execution grounding restores reliability: a grounded judge catches 93.3% of errors against 76.7% for the best ungrounded jury."
   contribution: "mathematics domain; prompt-parity test that keeps verifier strategy a clean independent variable."
-  links: []
+  links:
+    - label: "Paper"
+      url: "https://openreview.net/forum?id=ddBZYvcs5e"
+    - label: "Workshop listing, #452"
+      url: "https://tai-eval.github.io/papers/"
 
 - id: verifier-catches-what
   title: "Which Verifier Catches What? Mapping Error Severity to Verifier Strategy in Multi-Agent LLM Pipelines"
