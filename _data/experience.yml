@@ -23,7 +23,7 @@
   dates: "Jun 2025 to Sep 2025"
   location: "Kathmandu, Nepal"
   bullets:
-    - "Built an automated model-evaluation pipeline (MAE, RMSE, MAPE, SMAPE) deployed across forecasting models after peer review; fine-tuned and evaluated vision-language models (CLIP, BLIP, PaliGemma 2)."
+    - "Built an automated model-evaluation pipeline (MAE, RMSE, MAPE, SMAPE) deployed across forecasting models after review; fine-tuned and evaluated vision-language models (CLIP, BLIP, PaliGemma 2)."
 
 - role: "RPA Developer"
   org: "Quickfox Consulting"

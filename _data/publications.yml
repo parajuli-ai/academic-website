@@ -9,7 +9,9 @@
   summary: "Across 64,800 controlled verifications, a model approves its own wrong answers 11.9 percentage points more often than other models do, and telling it who wrote the answer changes almost nothing. Only execution grounding restores reliability: a grounded judge catches 93.3% of errors against 76.7% for the best ungrounded jury."
   contribution: "mathematics domain; prompt-parity test that keeps verifier strategy a clean independent variable."
   links:
-    - label: "Paper"
+    - label: "PDF"
+      url: "https://openreview.net/pdf?id=ddBZYvcs5e"
+    - label: "OpenReview"
       url: "https://openreview.net/forum?id=ddBZYvcs5e"
     - label: "Workshop listing, #452"
       url: "https://tai-eval.github.io/papers/"
