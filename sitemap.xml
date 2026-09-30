@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://tilakparajuli.name.np/2026/06/17/hello-world/</loc>
-<lastmod>2026-06-17T00:00:00+00:00</lastmod>
-</url>
-<url>
 <loc>https://tilakparajuli.name.np/2026/06/30/pragma-kumo-financial-foundation-models/</loc>
 <lastmod>2026-06-30T00:00:00+00:00</lastmod>
 </url>
@@ -21,10 +17,13 @@
 <loc>https://tilakparajuli.name.np/</loc>
 </url>
 <url>
+<loc>https://tilakparajuli.name.np/publications/</loc>
+</url>
+<url>
 <loc>https://tilakparajuli.name.np/work/</loc>
 </url>
 <url>
 <loc>https://tilakparajuli.name.np/assets/tilak-parajuli-cv.pdf</loc>
-<lastmod>2026-08-18T20:32:18+00:00</lastmod>
+<lastmod>2026-09-30T13:31:07+00:00</lastmod>
 </url>
 </urlset>
