@@ -8,9 +8,7 @@
   year: 2026
   summary: "Across 64,800 controlled verifications, a model approves its own wrong answers 11.9 percentage points more often than other models do, and telling it who wrote the answer changes almost nothing. Only execution grounding restores reliability: a grounded judge catches 93.3% of errors against 76.7% for the best ungrounded jury."
   contribution: "mathematics domain; prompt-parity test that keeps verifier strategy a clean independent variable."
-  links:
-    - label: "Workshop"
-      url: "https://tai-eval.github.io/"
+  links: []
 
 - id: verifier-catches-what
   title: "Which Verifier Catches What? Mapping Error Severity to Verifier Strategy in Multi-Agent LLM Pipelines"
