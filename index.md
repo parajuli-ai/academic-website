@@ -4,79 +4,44 @@ title: Home
 ---
 
 <div class="profile">
-  <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
-       alt="Tilak Parajuli"
-       class="profile-photo"
-       width="110" height="110"
-       loading="eager">
+  <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Tilak Parajuli" class="profile-photo" width="110" height="110" loading="eager">
   <div class="profile-info">
     <h1>Tilak Parajuli</h1>
-    <p class="role">AI/ML Engineer</p>
+    <p class="role">AI/ML Engineer and Researcher</p>
     <p class="links">
-      <a href="mailto:tilak.parajuli.58@gmail.com">Email</a>
-      <a href="https://github.com/parajulitilak" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/tilak-parajuli-777411179" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=WAKS2J4AAAAJ" target="_blank" rel="noopener">Scholar</a>
-      <a href="https://orcid.org/0009-0007-1545-8400" target="_blank" rel="noopener">ORCID</a>
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="{{ site.author.github_url }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="{{ site.author.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="{{ site.author.scholar_url }}" target="_blank" rel="noopener">Scholar</a>
+      <a href="{{ site.author.orcid_url }}" target="_blank" rel="noopener">ORCID</a>
+      <a href="{{ '/assets/tilak-parajuli-cv.pdf' | relative_url }}" target="_blank" rel="noopener">CV (PDF)</a>
     </p>
   </div>
 </div>
 
-<p class="tagline">I design production AI systems for decisions that have to be right: autonomous LLM pipelines and the evaluation that keeps them honest.</p>
-
-<p class="cta-row">
-  <a href="{{ '/assets/tilak-parajuli-cv.pdf' | relative_url }}" class="btn" target="_blank" rel="noopener">Download CV (PDF)</a>
-</p>
-
 <div class="home-bio" markdown="1">
 
-I work where applied LLMs meet real consequences. My focus is multi-agent pipelines, retrieval-augmented generation, and fine-tuned models, deployed on AWS. As a Data Scientist at Climate Clean Solutions, I build autonomous systems that contest property-tax valuations end-to-end, enforcing measurable reduction thresholds across thousands of parcels.
+My work centers on one problem: when one model judges another's output, can that judgment be trusted, where does it fail, and what fixes it? I study it in research, build against it in production as a data scientist and AI engineer, and probe it as a red-teamer.
 
-Previously, as an AI/ML Research Fellow at Fusemachines, I shipped real-time gaze detection into a live proctoring product and built the model-evaluation tooling teams relied on across their forecasting systems. Earlier, at [NAAMII](https://naamii.org/about/team-and-leadership/tilak_parajuli), I worked on computational biology for radiation oncology under Dr. Taman Upadhaya (Cedars-Sinai).
+Currently a Data Scientist / AI Engineer at [Climate Clean Solutions](https://climatecleansolutions.com/) & LowPropTax, where I own production for a multi-service agent platform on AWS, and an independent contractor in frontier AI safety evaluation. Previously at [Fusemachines](https://fusemachines.com/) and [NAAMII](https://naamii.org/about/team-and-leadership/tilak_parajuli). B.Sc. in Computer Science and Information Technology, Tribhuvan University.
 
-B.Sc. in Computer Science, Tribhuvan University.
+**Research interests:** evaluation reliability, LLM-as-judge, error propagation in multi-agent systems, AI safety and security.
 
 </div>
 
 <div class="home-section">
-<h2>Selected Work</h2>
-
-<div class="work-grid">
-
-<div class="work-item">
-<h3>Multi-Agent Tax Valuation Pipeline</h3>
-<p class="meta">Climate Clean Solutions, 2026</p>
-<p>Autonomous LLM system for property tax appeals. RAG-driven comparable retrieval, automated valuation modeling, and QA enforcement across thousands of parcels.</p>
-</div>
-
-<div class="work-item">
-<h3><a href="https://github.com/parajulitilak/RAG-Pipeline-for-Job-Data-Retrieval" target="_blank" rel="noopener">RAG Pipeline for Job Retrieval</a></h3>
-<p class="meta">Python, LlamaIndex, ChromaDB, Cohere, Docker</p>
-<p>Hybrid retrieval combining BM25 sparse search with dense vector embeddings and Cohere reranking, served via FastAPI.</p>
-</div>
-
-<div class="work-item">
-<h3><a href="https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion" target="_blank" rel="noopener">Travya: Multi-Agent Travel Platform</a></h3>
-<p class="meta">LangGraph, React, PostgreSQL, Redis, Docker</p>
-<p>Specialized research, planning, and booking agents with streaming AI and third-party integrations.</p>
-</div>
-
-<div class="work-item">
-<h3><a href="https://github.com/parajulitilak/seventh_sem_project/tree/main/summarizer_app" target="_blank" rel="noopener">Text Summarization (LSA + T5)</a></h3>
-<p class="meta">Python, Transformers, NLP</p>
-<p>Dual extractive/abstractive summarizer. Fine-tuned T5 alongside LSA, evaluated with ROUGE metrics.</p>
-</div>
-
-</div>
+<h2>Publications</h2>
+{% for p in site.data.publications %}{% include publication.html pub=p mode="compact" %}{% endfor %}
+<p><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
 </div>
 
 <div class="home-section" markdown="1">
 
 ## Recent
 
-- **Jan 2026** · Data Scientist at Climate Clean Solutions, architecting multi-agent LLM pipelines.
-- **2025** · AI Fellow at Fusemachines. Shipped gaze detection, built model-evaluation pipelines.
-- **2025** · Full Scholarship, Sixth Annual Nepal AI School (ANAIS).
-- **2024** · B.Sc. in Computer Science, Tribhuvan University (78/100).
+- **Sep 2026** · Paper accepted at the NeurIPS 2026 Workshop on Trust-AI-Eval; extended version submitted to ICLR 2027.
+- **Sep 2026** · Began contract red-teaming of frontier LLM agents.
+- **Aug 2026** · Fault-injection study selected as a top AI/ML project at SISTER 2026.
+- **Jan 2026** · Joined Climate Clean Solutions & LowPropTax.
 
 </div>

@@ -1,0 +1,26 @@
+- id: verifier-reliability
+  title: "Neither Blinding Nor a Jury, Neither Capability Nor Strategy: What Brings a Verifier to Reliability"
+  authors: "J. Kozman, A. Waddepalli, T. Parajuli"
+  venue: "NeurIPS 2026 Workshop on Trust-AI-Eval (TAE)"
+  venue_url: "https://tai-eval.github.io/"
+  status: "Accepted"
+  note: "extended version under review at ICLR 2027"
+  year: 2026
+  summary: "Across 64,800 controlled verifications, a model approves its own wrong answers 11.9 percentage points more often than other models do, and telling it who wrote the answer changes almost nothing. Only execution grounding restores reliability: a grounded judge catches 93.3% of errors against 76.7% for the best ungrounded jury."
+  contribution: "mathematics domain; prompt-parity test that keeps verifier strategy a clean independent variable."
+  links:
+    - label: "Workshop"
+      url: "https://tai-eval.github.io/"
+
+- id: verifier-catches-what
+  title: "Which Verifier Catches What? Mapping Error Severity to Verifier Strategy in Multi-Agent LLM Pipelines"
+  authors: "T. Parajuli, J. Kozman, A. Waddepalli"
+  venue: "SISTER 2026, selected as a top AI/ML project"
+  venue_url: "https://sister.synthica.org/"
+  status: "Manuscript"
+  year: 2026
+  summary: "Controlled fault injection into a plan/solve/verify pipeline. Removing the verifier raises execution-stage error propagation to 27.3%; chain-of-thought and rubric verifiers repair 95 to 98% of the faults they catch, against 78.5% for direct prompting."
+  contribution: "First author. Design, experiments, analysis."
+  links:
+    - label: "Code and traces"
+      url: "https://github.com/parajulitilak/multiagent-error-propagation"

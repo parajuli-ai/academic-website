@@ -1,0 +1,28 @@
+- name: "Zeroth: evaluation-gated clinical multi-agent platform"
+  stack: "Python, FastAPI, Next.js, PostgreSQL, Pydantic"
+  year: 2026
+  note: "Private repository"
+  bullets:
+    - "Genomics, imaging, radiomics and clinical-note agents each produce findings. An evaluation gate returns PASS, FLAG or BLOCK and refuses to display any claim without provenance; synthetic data cannot reach a report unlabeled."
+    - "Security by design: timing-safe authentication, revocable sessions, per-source throttling, a PHI allowlist so patient identifiers never enter claims, logs or prompts, and an append-only audit log."
+
+- name: "RAG pipeline for job data retrieval"
+  stack: "Python, FastAPI, LlamaIndex, ChromaDB, Cohere, BM25, Docker"
+  year: 2025
+  url: "https://github.com/parajulitilak/RAG-Pipeline-for-Job-Data-Retrieval"
+  bullets:
+    - "Hybrid retrieval combining BM25 sparse search with dense embeddings and Cohere reranking, served via FastAPI and containerized."
+
+- name: "Travya: multi-agent travel companion"
+  stack: "Python, FastAPI, LangGraph, React, PostgreSQL, Redis, Docker"
+  year: 2025
+  url: "https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion"
+  bullets:
+    - "Research, planning and booking agents on a microservices design with streaming responses and Google Maps, Amadeus and Stripe integrations. Built during the Fusemachines fellowship."
+
+- name: "Text summarization with LSA and T5"
+  stack: "Python, Transformers, NLP"
+  year: 2024
+  url: "https://github.com/parajulitilak/seventh_sem_project/tree/main/summarizer_app"
+  bullets:
+    - "Extractive and abstractive summarizer: T5 fine-tuned on PubMed alongside LSA, evaluated with ROUGE. Final-year project."

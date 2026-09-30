@@ -1,0 +1,42 @@
+- role: "Data Scientist / AI Engineer"
+  org: "Climate Clean Solutions & LowPropTax"
+  org_url: "https://climatecleansolutions.com/"
+  dates: "Jan 2026 to present"
+  location: "California, USA / Kathmandu, Nepal (remote)"
+  bullets:
+    - "Own production for a seven-service, four-Lambda multi-agent platform for property-tax appeals on AWS (ECS Fargate, Lambda, API Gateway, SQS/SNS, S3, CloudWatch) across dev and prod; 40 Terraform resource types, GitHub Actions for build, test, deploy and release."
+    - "Built the release path: dev records a signed image manifest per commit; prod promotes the exact digests dev ran, re-renders task definitions from declared config, and waits for rollouts. No manual AWS steps per release."
+    - "Traced a 100-property production upload across two codebases from CloudWatch and the database: proved which of 145 outcomes were correct, filed five portal defects with file and line, shipped four fixes the same day."
+    - "Designed the agents' error contract across five services. Least-privilege IAM: every new AWS API is simulated against the deploy role before a branch exists."
+    - "Took over the income-approach valuation engine after a 13-defect rewrite; CI baseline 987 tests, 0 failures. Built the per-appeal LLM cost model and provider routing."
+
+- role: "Red-Team & Evaluation Engineer"
+  org: "Independent contractor, AI safety evaluation"
+  dates: "Sep 2026 to present"
+  location: "Remote"
+  bullets:
+    - "Design adversarial and edge-case scenarios for frontier LLM agents with machine-verifiable pass/fail criteria covering over-refusal, over-disclosure and prompt injection; run them across multiple frontier models and report attack-success and solvability rates."
+
+- role: "AI/ML Research Fellow"
+  org: "Fusemachines Nepal"
+  org_url: "https://fusemachines.com/"
+  dates: "Jun 2025 to Sep 2025"
+  location: "Kathmandu, Nepal"
+  bullets:
+    - "Built an automated model-evaluation pipeline (MAE, RMSE, MAPE, SMAPE) deployed across forecasting models after peer review; fine-tuned and evaluated vision-language models (CLIP, BLIP, PaliGemma 2)."
+
+- role: "RPA Developer"
+  org: "Quickfox Consulting"
+  org_url: "https://quickfoxconsulting.com/"
+  dates: "Feb 2025 to May 2025"
+  location: "Kathmandu, Nepal"
+  bullets:
+    - "Built an LLM-powered data-cleaning pipeline for legacy medical databases; built RPA bots for data entry and web scraping."
+
+- role: "AI Research Intern"
+  org: "NAAMII"
+  org_url: "https://naamii.org/about/team-and-leadership/tilak_parajuli"
+  dates: "Jun 2024 to Sep 2024"
+  location: "Kathmandu, Nepal"
+  bullets:
+    - "Clinical and radiomics analysis for a radiation-oncology study under Dr. Taman Upadhaya: permutation tests, ROC AUC, and ML models for biomarker signal discovery."

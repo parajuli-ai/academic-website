@@ -10,6 +10,4 @@ node_modules/
 *.swo
 *~
 
-# Local Claude Code agent config
-.claude/
 

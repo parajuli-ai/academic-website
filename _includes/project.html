@@ -1,0 +1,6 @@
+{% assign pr = include.project %}
+<div class="job">
+  <p class="job-head"><strong>{{ pr.name }}</strong>{% if pr.url %} · <a href="{{ pr.url }}" target="_blank" rel="noopener">Code</a>{% endif %}</p>
+  <p class="job-meta">{{ pr.stack }} · {{ pr.year }}{% if pr.note %} · {{ pr.note }}{% endif %}</p>
+  <ul>{% for b in pr.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+</div>

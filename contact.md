@@ -5,7 +5,7 @@ permalink: /contact/
 toc: false
 ---
 
-Open to roles in applied AI/ML and research, collaborations, and technical conversations. Book a time below, or reach out directly.
+For collaborations, questions about the papers, or anything else, book a time below or email me.
 
 <p class="contact-links">
 <span id="email-link"><noscript>tilak.parajuli.58 [at] gmail.com</noscript></span> · 

@@ -1,0 +1,6 @@
+{% assign e = include.job %}
+<div class="job">
+  <p class="job-head"><strong>{{ e.role }}</strong> · {% if e.org_url %}<a href="{{ e.org_url }}" target="_blank" rel="noopener">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</p>
+  <p class="job-meta">{{ e.dates }} · {{ e.location }}</p>
+  {% if include.mode == "full" %}<ul>{% for b in e.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+</div>

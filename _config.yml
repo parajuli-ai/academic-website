@@ -1,9 +1,10 @@
 # Site Settings
-title: "Tilak Parajuli | AI/ML Engineer"
+title: "Tilak Parajuli | AI/ML Engineer and Researcher"
 email: tilak.parajuli.58@gmail.com
 description: >-
-  I build production AI systems: multi-agent pipelines, RAG, and LLM fine-tuning.
-  Data Scientist at Climate Clean Solutions.
+  AI/ML engineer, data scientist and researcher working on evaluation reliability:
+  when one model judges another, where that fails, and what fixes it. Production
+  multi-agent systems on AWS; red-teaming of frontier LLM agents.
 baseurl: ""
 url: "https://tilakparajuli.name.np"
 
@@ -14,10 +15,14 @@ disqus_shortname: tilak-parajuli
 # Author Information
 author:
   name: "Tilak Parajuli"
-  bio: "AI/ML Engineer"
+  bio: "AI/ML Engineer and Researcher"
   location: "Kathmandu, Nepal"
   email: tilak.parajuli.58@gmail.com
-  linkedin: tilak-parajuli
+  linkedin: tilak-parajuli-777411179
+  linkedin_url: "https://www.linkedin.com/in/tilak-parajuli-777411179"
+  orcid_url: "https://orcid.org/0009-0007-1545-8400"
+  scholar_url: "https://scholar.google.com/citations?user=WAKS2J4AAAAJ"
+  github_url: "https://github.com/parajulitilak"
   github: parajulitilak
   orcid: "0009-0007-1545-8400"
   google_scholar: "WAKS2J4AAAAJ"
@@ -52,6 +57,8 @@ defaults:
 
 # Navigation
 navigation:
+  - title: Publications
+    url: /publications/
   - title: Work
     url: /work/
   - title: Blog
@@ -71,13 +78,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
-  - BACKEND_COMPLETE.md
-  - CHANGELOG.md
-  - COMPLETE_OVERVIEW.md
-  - DEPLOYMENT_GUIDE.md
-  - DESIGN_RESEARCH.md
-  - FILE_LISTING.md
-  - NAVBAR_FIX.md
   - PROJECT_STRUCTURE.md
   - PROJECT_SUMMARY.md
   - QUICK_START.md
