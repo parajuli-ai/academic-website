@@ -9,13 +9,6 @@
     - "Designed the evaluation layer: a QA agent checks every valuation before a human sees it, and production outcomes are traced end to end to verify they are correct."
     - "Lead LLM cost and model-selection decisions across the platform."
 
-- role: "Red-Team & Evaluation Engineer"
-  org: "Independent contractor, AI safety evaluation"
-  dates: "Sep 2026 to present"
-  location: "Remote"
-  bullets:
-    - "Design adversarial and edge-case scenarios for frontier LLM agents with machine-verifiable pass/fail criteria covering over-refusal, over-disclosure and prompt injection; run them across multiple frontier models and report attack-success and solvability rates."
-
 - role: "AI/ML Research Fellow"
   org: "Fusemachines Nepal"
   org_url: "https://fusemachines.com/"

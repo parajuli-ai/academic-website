@@ -18,7 +18,7 @@ hide_title: true
   <p class="cv-download"><a href="{{ '/assets/tilak-parajuli-cv.pdf' | relative_url }}" class="btn" target="_blank" rel="noopener">Download CV (PDF)</a></p>
 </div>
 
-AI/ML engineer and researcher working on evaluation reliability: I red-team frontier LLM agents, measure where automated judges fail, and build the evaluation gates that decide what reaches a human. I also own production for a multi-service agent platform on AWS.
+AI/ML engineer and researcher working on evaluation reliability: I measure where automated judges fail and build the evaluation gates that decide what reaches a human. I also own production for a multi-service agent platform on AWS.
 
 ## Publications
 
@@ -33,8 +33,8 @@ Details on the [Work]({{ '/work/' | relative_url }}) page.
 ## Skills
 
 <dl class="skills">
-  <dt>AI Safety &amp; Security</dt>
-  <dd>Red-teaming frontier agents, prompt injection, over-refusal and over-disclosure, LLM-as-judge evaluation, adversarial scenario design, threat modeling, least-privilege IAM, secrets management, auth hardening, PHI handling</dd>
+  <dt>Evaluation &amp; Security</dt>
+  <dd>LLM-as-judge evaluation, AI safety, threat modeling, least-privilege IAM, secrets management, auth hardening, PHI handling</dd>
   <dt>Cloud &amp; Infrastructure</dt>
   <dd>AWS (ECS Fargate, Lambda, API Gateway, SQS/SNS, S3, ECR, CloudWatch, IAM, Secrets Manager, SSM, PrivateLink, Route 53), Terraform, Docker, MongoDB Atlas, DuckDB, Parquet</dd>
   <dt>CI/CD &amp; Release</dt>

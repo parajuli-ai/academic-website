@@ -21,9 +21,9 @@ title: Home
 
 <div class="home-bio" markdown="1">
 
-My work centers on one problem: when one model judges another's output, can that judgment be trusted, where does it fail, and what fixes it? I study it in research, build against it in production as a data scientist and AI engineer, and probe it as a red-teamer.
+My work centers on one problem: when one model judges another's output, can that judgment be trusted, where does it fail, and what fixes it? I study it in research and build against it in production as a data scientist and AI engineer.
 
-Currently a Data Scientist / AI Engineer at [Climate Clean Solutions](https://climatecleansolutions.com/) & LowPropTax, where I own production for a multi-service agent platform on AWS, and an independent contractor in frontier AI safety evaluation. Previously at [Fusemachines](https://fusemachines.com/) and [NAAMII](https://naamii.org/about/team-and-leadership/tilak_parajuli). B.Sc. in Computer Science and Information Technology, Tribhuvan University.
+Currently a Data Scientist / AI Engineer at [Climate Clean Solutions](https://climatecleansolutions.com/) & LowPropTax, where I own production for a multi-service agent platform on AWS. Previously at [Fusemachines](https://fusemachines.com/) and [NAAMII](https://naamii.org/about/team-and-leadership/tilak_parajuli). B.Sc. in Computer Science and Information Technology, Tribhuvan University.
 
 **Research interests:** evaluation reliability, LLM-as-judge, error propagation in multi-agent systems, AI safety and security.
 
@@ -40,7 +40,6 @@ Currently a Data Scientist / AI Engineer at [Climate Clean Solutions](https://cl
 ## Recent
 
 - **Sep 2026** · Paper accepted at the NeurIPS 2026 Workshop on Trust-AI-Eval; extended version submitted to ICLR 2027.
-- **Sep 2026** · Began contract red-teaming of frontier LLM agents.
 - **Aug 2026** · Fault-injection study selected as a top AI/ML project at SISTER 2026.
 - **Jan 2026** · Joined Climate Clean Solutions & LowPropTax.
 
