@@ -264,6 +264,12 @@
 <h2 id="projects">Projects</h2>
 
 <div class="job">
+  <p class="job-head"><strong>Travya: agentic AI travel planner</strong> · <a href="https://travya-app.pages.dev" target="_blank" rel="noopener">Live demo</a> · <a href="https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion" target="_blank" rel="noopener">Code</a> · <a href="https://travya-docs.pages.dev" target="_blank" rel="noopener">Docs</a></p>
+  <p class="job-meta">Python, FastAPI, Google ADK, Gemini, PostgreSQL + pgvector, React, MapLibre, Docker · 2026</p>
+  <ul><li>A Google ADK workflow plans a trip day by day: weather, OpenStreetMap, Wikivoyage (RAG on pgvector) and fare agents research in parallel, a planner drafts, and a critic plus code-level checks send weak drafts back. Every step streams live onto a map.</li><li>Evaluated on six golden trips: 6/6 plans pass every hard check, 96% of named places land on the map, median 32 s on free-tier models. Model and key failover, rate limits and a daily model budget keep the public demo running at $0.</li><li>Owner-scoped data access, prompt-injection fencing and human-confirmed (simulated) bookings; CI runs end-to-end and accessibility tests, CodeQL and Trivy. Started as a Fusemachines fellowship team project; I rebuilt it end to end.</li></ul>
+</div>
+
+<div class="job">
   <p class="job-head"><strong>Zeroth: evaluation-gated clinical multi-agent platform</strong></p>
   <p class="job-meta">Python, FastAPI, Next.js, PostgreSQL, Pydantic · 2026 · Private repository</p>
   <ul><li>Genomics, imaging, radiomics and clinical-note agents each produce findings. An evaluation gate returns PASS, FLAG or BLOCK and refuses to display any claim without provenance; synthetic data cannot reach a report unlabeled.</li><li>Security by design: timing-safe authentication, revocable sessions, per-source throttling, a PHI allowlist so patient identifiers never enter claims, logs or prompts, and an append-only audit log.</li></ul>
@@ -273,12 +279,6 @@
   <p class="job-head"><strong>RAG pipeline for job data retrieval</strong> · <a href="https://github.com/parajulitilak/RAG-Pipeline-for-Job-Data-Retrieval" target="_blank" rel="noopener">Code</a></p>
   <p class="job-meta">Python, FastAPI, LlamaIndex, ChromaDB, Cohere, BM25, Docker · 2025</p>
   <ul><li>Hybrid retrieval combining BM25 sparse search with dense embeddings and Cohere reranking, served via FastAPI and containerized.</li></ul>
-</div>
-
-<div class="job">
-  <p class="job-head"><strong>Travya: multi-agent travel companion</strong> · <a href="https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion" target="_blank" rel="noopener">Code</a></p>
-  <p class="job-meta">Python, FastAPI, LangGraph, React, PostgreSQL, Redis, Docker · 2025</p>
-  <ul><li>Research, planning and booking agents on a microservices design with streaming responses and Google Maps, Amadeus and Stripe integrations. Built during the Fusemachines fellowship.</li></ul>
 </div>
 
 <div class="job">
