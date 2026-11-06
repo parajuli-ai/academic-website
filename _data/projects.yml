@@ -1,3 +1,14 @@
+- name: "Travya: agentic AI travel planner"
+  stack: "Python, FastAPI, Google ADK, Gemini, PostgreSQL + pgvector, React, MapLibre, Docker"
+  year: 2026
+  demo: "https://travya-app.pages.dev"
+  url: "https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion"
+  docs: "https://travya-docs.pages.dev"
+  bullets:
+    - "A Google ADK workflow plans a trip day by day: weather, OpenStreetMap, Wikivoyage (RAG on pgvector) and fare agents research in parallel, a planner drafts, and a critic plus code-level checks send weak drafts back. Every step streams live onto a map."
+    - "Evaluated on six golden trips: 6/6 plans pass every hard check, 96% of named places land on the map, median 32 s on free-tier models. Model and key failover, rate limits and a daily model budget keep the public demo running at $0."
+    - "Owner-scoped data access, prompt-injection fencing and human-confirmed (simulated) bookings; CI runs end-to-end and accessibility tests, CodeQL and Trivy. Started as a Fusemachines fellowship team project; I rebuilt it end to end."
+
 - name: "Zeroth: evaluation-gated clinical multi-agent platform"
   stack: "Python, FastAPI, Next.js, PostgreSQL, Pydantic"
   year: 2026
@@ -12,13 +23,6 @@
   url: "https://github.com/parajulitilak/RAG-Pipeline-for-Job-Data-Retrieval"
   bullets:
     - "Hybrid retrieval combining BM25 sparse search with dense embeddings and Cohere reranking, served via FastAPI and containerized."
-
-- name: "Travya: multi-agent travel companion"
-  stack: "Python, FastAPI, LangGraph, React, PostgreSQL, Redis, Docker"
-  year: 2025
-  url: "https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion"
-  bullets:
-    - "Research, planning and booking agents on a microservices design with streaming responses and Google Maps, Amadeus and Stripe integrations. Built during the Fusemachines fellowship."
 
 - name: "Text summarization with LSA and T5"
   stack: "Python, Transformers, NLP"
