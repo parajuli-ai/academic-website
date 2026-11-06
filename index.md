@@ -39,6 +39,7 @@ Currently a Data Scientist / AI Engineer at [Climate Clean Solutions](https://cl
 
 ## Recent
 
+- **Nov 2026** · Released Travya v1, an open-source agentic AI travel planner on Google ADK: [live demo](https://travya-app.pages.dev), [code](https://github.com/fuseai-fellowship/Travya---Agentic-AI-Powered-Travel-Companion).
 - **Sep 2026** · Paper accepted at the NeurIPS 2026 Workshop on Trust-AI-Eval; extended version submitted to ICLR 2027.
 - **Aug 2026** · Fault-injection study selected as a top AI/ML project at SISTER 2026.
 - **Jan 2026** · Joined Climate Clean Solutions & LowPropTax.
